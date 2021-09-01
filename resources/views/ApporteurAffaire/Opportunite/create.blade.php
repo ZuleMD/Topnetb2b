@@ -34,7 +34,7 @@
                             <div class="row">
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
-                                        <label>Raison sociale</label>
+                                        <label>Raison sociale::</label>
                                         <input type="file" class="form-control file-upload-info @error('RaisonSociale') is-invalid @enderror" placeholder="Raison Sociale" name="RaisonSociale">
                                         <span class="input-group-append">
 
