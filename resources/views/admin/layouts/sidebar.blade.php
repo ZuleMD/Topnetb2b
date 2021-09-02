@@ -63,14 +63,13 @@
 
                             </ul>
                         </li>
-
-
                         <li class="sidebar-item  ">
                             <a href="{{route('Historique.index')}}" class='sidebar-link'>
                                 <i class="bi bi-clock-history"></i>
                                 <span>Historique</span>
                             </a>
                         </li>
+
                         @endif
 
                         @if(auth()->check()&& auth()->user()->role->Nom === 'CommercialPro')
@@ -118,8 +117,6 @@
 
                             </ul>
                         </li>
-
-
                         <li class="sidebar-item  ">
                             <a href="{{route('Historique.index')}}" class='sidebar-link'>
                                 <i class="bi bi-clock-history"></i>
@@ -127,7 +124,9 @@
                             </a>
                         </li>
 
+
                         @endif
+
 
                         @if(auth()->check()&& auth()->user()->role->Nom === 'ApporteurAffaire')
 

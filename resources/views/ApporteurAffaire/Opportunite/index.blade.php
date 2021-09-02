@@ -26,13 +26,14 @@
                         <table class="table table-bordered" id="opportuniteTable">
                             <thead>
                                 <tr>
+
+                                    <th scope="col">Id</th>
                                     <th scope="col">Code client</th>
                                     <th scope="col">Registre Commerce</th>
                                     <th scope="col">Nom</th>
                                     <th scope="col">Prénom</th>
                                     <th scope="col">Adresse</th>
                                     <th scope="col">Téléphone</th>
-                                    <th scope="col">Cin gérant</th>
                                     <th scope="col">Offre</th>
                                     <th scope="col" width="150px"></th>
 
@@ -69,7 +70,13 @@
             language: {
                 "url": "http://cdn.datatables.net/plug-ins/1.10.10/i18n/French.json"
             },
+            order: [
+                [0, "asc"]
+            ],
             columns: [{
+                    data: 'id',
+                    name: 'id'
+                }, {
                     data: 'CodeClient',
                     name: 'CodeClient'
                 },
@@ -95,10 +102,7 @@
                     data: 'Tel',
                     name: 'Tel'
                 },
-                {
-                    data: 'CinGerant',
-                    name: 'CinGerant'
-                },
+
                 {
                     data: 'Offre',
                     name: 'Offre'

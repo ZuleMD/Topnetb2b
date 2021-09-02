@@ -6,9 +6,9 @@
     <img src="https://www.first2trade.com/media/cache/home_activity_area_thumb_large/uploads/files/Accueil/poignee-de-main-banniere-homepage-f2t-compressed.jpeg" alt="" class="img-fluid">
     <div class="text">
 
-        <h1>Plateforme de<strong> mise en relation</strong><strong>&nbsp;</strong><strong> d'affaires</strong>&nbsp;<br>pour&nbsp;<strong> entreprises</strong> </h1>
+        <h1>Plateforme de<strong> mise en relation</strong><strong>&nbsp;</strong><strong> d'affaires</strong>&nbsp;<br>pour&nbsp;<strong> Topnet</strong> </h1>
         <p>TopnetB2B libère la circulation des opportunités d'affaires<br>
-            et facilite la prospection commerciale des entreprises !</p>
+            et facilite la prospection commerciale des agences topnet!</p>
 
     </div>
 </div>

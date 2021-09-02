@@ -11,25 +11,6 @@ class Opportunite extends Authenticatable
     protected $guarded = [];
 
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-
-
-        'CodeClient',
-        'RaisonSociale',
-        'Offre',
-        'MatriculeFiscal',
-        'RegistreCommerce',
-        'Nom',
-        'Prenom',
-        'Adresse',
-        'Tel',
-        'CinGerant',
-    ];
 
 
 
