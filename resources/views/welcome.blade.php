@@ -156,7 +156,8 @@
                 <div class="row">
                     <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                         <div class="icon-box">
-                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                            <img src="{{asset('images/home-key-point-1.png')}}" class="img-fluid" alt="">
+
                             <h4><a href="">Liberté</a></h4>
                             <p>La visibilité accrue de mon annonce m'ouvre de réelles perspectives de business</p>
                         </div>
@@ -164,7 +165,7 @@
 
                     <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
                         <div class="icon-box">
-                            <div class="icon"><i class="bx bx-file"></i></div>
+                            <img src="{{asset('images/home-key-point-6.png')}}" class="img-fluid" alt="">
                             <h4><a href="">Visibilité</a></h4>
                             <p>Je fais connaître mon offre et trouve de nouvelles sources de business et de nouveaux prospects</p>
 
@@ -173,7 +174,7 @@
 
                     <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
                         <div class="icon-box">
-                            <div class="icon"><i class="bx bx-tachometer"></i></div>
+                            <img src="{{asset('images/home-key-point-1.png')}}" class="img-fluid" alt="">
                             <h4><a href="">Rapidité</a></h4>
                             <p>La mise en relation d'affaires proposée par TopnetB2B accélére le développement de mon activité</p>
 
@@ -182,7 +183,7 @@
 
                     <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
                         <div class="icon-box">
-                            <div class="icon"><i class="bx bx-layer"></i></div>
+                            <img src="{{asset('images/home-key-point-3.png')}}" class="img-fluid" alt="">
                             <h4><a href="">Simplicité</a></h4>
                             <p>Je décris mon annonce,TopnetB2b m'accompagne pour l'optimiser</p>
                         </div>
