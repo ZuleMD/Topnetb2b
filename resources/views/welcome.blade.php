@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
@@ -156,7 +156,7 @@
                 <div class="row">
                     <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                         <div class="icon-box">
-                            <img src="{{asset('images/home-key-point-1.png')}}" class="img-fluid" alt="">
+                            <img src="{{asset('images/home-key-point-4.png')}}" class="img-fluid" alt="">
 
                             <h4><a href="">Liberté</a></h4>
                             <p>La visibilité accrue de mon annonce m'ouvre de réelles perspectives de business</p>
