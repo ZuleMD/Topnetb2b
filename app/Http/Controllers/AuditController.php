@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use OwenIt\Auditing\Models\Audit;
-use OwenIt\Auditing\Events\Auditing;
-use App\Models\User;
-use Yajra\DataTables\Facades\Datatables;
 
 class AuditController extends Controller
 {

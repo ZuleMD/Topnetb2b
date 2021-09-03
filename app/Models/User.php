@@ -2,19 +2,15 @@
 
 namespace App\Models;
 
-
-
-use Illuminate\Support\Facades\Session;
 use Illuminate\Notifications\Notifiable;
 
 use OwenIt\Auditing\Contracts\Auditable;
-use LdapRecord\Laravel\Auth\LdapAuthenticatable;
 use OwenIt\Auditing\Auditable as AuditableTrait;
 use LdapRecord\Laravel\Auth\AuthenticatesWithLdap;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable implements Auditable, LdapAuthenticatable
+class User extends Authenticatable implements Auditable
 {
     use HasFactory, Notifiable, AuthenticatesWithLdap;
     use AuditableTrait;

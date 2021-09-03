@@ -12,6 +12,13 @@
             </div>
             @endif
 
+            @if(Session::has('existe'))
+            <div class="alert bg-danger alert-danger text-white " role="alert">
+                {{Session::get('existe')}}
+            </div>
+            @endif
+
+
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">Ajouter Pack/Offre Commission</h4>
@@ -25,7 +32,7 @@
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
                                         <label for="">Référence offre </label>
-                                        <input type="text" class="form-control @error('RefOffre') is-invalid @enderror" placeholder="Référence offre" value="" name="RefOffre">
+                                        <input type="text" class="form-control @error('RefOffre') is-invalid @enderror" value="{{$offre->RefOffre}}" name="RefOffre">
                                         @error('RefOffre')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -39,7 +46,7 @@
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
                                         <label for="">Référence produit</label>
-                                        <input type="text" class="form-control @error('RefProduit') is-invalid @enderror" placeholder="Référence produit " name="RefProduit">
+                                        <input type="text" class="form-control @error('RefProduit') is-invalid @enderror" value="{{$offre->RefProduit}}" name="RefProduit">
                                         @error('RefProduit')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -51,7 +58,7 @@
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
                                         <label for="">Montant commission</label>
-                                        <input type="text" class="form-control @error('MontantCommission') is-invalid @enderror" placeholder="Montant commission" name="MontantCommission">
+                                        <input type="text" class="form-control @error('MontantCommission') is-invalid @enderror" value="{{$offre->MontantCommission}}" name="MontantCommission">
                                         @error('MontantCommission')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

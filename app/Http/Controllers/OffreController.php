@@ -12,6 +12,10 @@ use Yajra\DataTables\Facades\Datatables;
 
 class OffreController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('role:Admin,CommercialPro');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +29,7 @@ class OffreController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function ($offre) {
                     $view = '<a href="#" data-bs-toggle="modal" data-bs-target="#default' . $offre->id . '"> <i class="bi bi-eye"></i></a>';
-                    $edit = '&nbsp;&nbsp;&nbsp; <a href="' . route('Offre.create', $offre->id) . '"><i class="bi bi-pencil"></i></a>';
+                    $edit = '&nbsp;&nbsp;&nbsp; <a href="' . route('Offre.edit', $offre->id) . '"><i class="bi bi-pencil"></i></a>';
                     $acti = '&nbsp;&nbsp;&nbsp; <span class="badge badge-success"> Activé </span>';
                     $des = '&nbsp;&nbsp;&nbsp; <span class="badge badge-danger"> Désactivé </span>';
                     $act = $view . $edit;
@@ -133,6 +137,8 @@ class OffreController extends Controller
      */
     public function edit($id)
     {
+        $offre = Offre::find($id);
+        return view('CommercialPro.Offre.edit', compact('offre'));
     }
 
     /**

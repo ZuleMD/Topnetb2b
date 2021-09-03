@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -25,12 +29,9 @@ Route::get('/dashboard', function () {
 });
 
 
-Auth::routes();
-
 
 Route::group(['middleware' => ['auth', 'Admin']], function () {
-    //Historique
-    Route::resource('Historique', 'AuditController');
+
     //Utilisateur
     Route::resource('CommercialPro', 'CommercialProController');
     //Agence
@@ -39,20 +40,24 @@ Route::group(['middleware' => ['auth', 'Admin']], function () {
     Route::get('/statusagent/update/{id}', 'CommercialProController@toggleStatus')->name('update.statusagent');
 });
 
-Route::group(['middleware' => ['auth', 'CommercialPro']], function () {
-    //Historique
+
+//Historique
+Route::group(['middleware' => ['auth', 'web']], function () {
     Route::resource('Historique', 'AuditController');
+});
+
+//Opportunités
+Route::group(['middleware' => ['auth', 'web']], function () {
+    Route::resource('Opportunite', 'OpportuniteController');
+});
+
+Route::group(['middleware' => ['auth', 'CommercialPro']], function () {
     //Apporteur
     Route::resource('Apporteur', 'ApporteurController');
     Route::get('/statusapporteur/update/{id}', 'ApporteurController@toggleStatus')->name('update.statusapporteur');
     //Offre
     Route::resource('Offre', 'OffreController');
-    //Consulter les opportunités 
-    Route::resource('Opportunite', 'OpportuniteController@index');
 });
 
-
 Route::group(['middleware' => ['auth', 'ApporteurAffaire']], function () {
-    //Opportunités
-    Route::resource('Opportunite', 'OpportuniteController');
 });
