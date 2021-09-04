@@ -212,7 +212,7 @@
                         <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
                             <div class="pic"><img src="{{asset('images/team/team-1.jpg')}}" class="img-fluid" alt=""></div>
                             <div class="member-info">
-                                <h4>Mariem Dervali</h4>
+                                <h4>Mariem Derbali</h4>
                                 <span>Développeuse web</span>
                                 <p>Certifiée en développement web </p>
                                 <div class="social">
