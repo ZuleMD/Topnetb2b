@@ -19,7 +19,7 @@
             <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
             <h3>Bienvenue</h3>
             <p>Vous êtes à 30 secondes de gagner votre propre argent ! </p>
-            <a href="{{ route('register') }}"><input type="submit" style="width: 70%;" name="" value="Créer mon compte" /></a><br />
+            <a href="{{ route('register') }}"><input type="submit" style="width: 80%;" name="" value="Créer mon compte" /></a><br />
         </div>
 
         @if (session('error'))
@@ -75,10 +75,15 @@
 </div>
 
 <style>
+    body {
+        background-color:
+            #37517e;
+    }
+
     .register {
-        background: -webkit-linear-gradient(left, #37517e, #47b2e4);
+        background: -webkit-linear-gradient(left, #2d546eeb, #e48647);
         margin-top: 3%;
-        padding: 3%;
+        padding: 5%;
     }
 
     .register-left {
@@ -151,7 +156,7 @@
         border: none;
         border-radius: 1.5rem;
         padding: 2%;
-        background: #e48647;
+        background: #47b2e4;
         color: #fff;
         font-weight: 600;
         width: 70%;

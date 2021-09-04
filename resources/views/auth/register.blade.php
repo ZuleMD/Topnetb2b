@@ -109,10 +109,15 @@
 
 </div>
 <style>
+    body {
+        background-color:
+            #37517e;
+    }
+
     .register {
-        background: -webkit-linear-gradient(left, #37517e, #47b2e4);
+        background: -webkit-linear-gradient(left, #2d546eeb, #e48647);
         margin-top: 3%;
-        padding: 3%;
+        padding: 5%;
     }
 
     .register-left {
@@ -185,7 +190,7 @@
         border: none;
         border-radius: 1.5rem;
         padding: 2%;
-        background: #e48647;
+        background: #47b2e4;
         color: #fff;
         font-weight: 600;
         width: 70%;

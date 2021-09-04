@@ -349,7 +349,7 @@
 
         <div class="container footer-bottom clearfix">
             <div class="copyright">
-                &copy; Copyright <strong><span>TopnetB2B</span></strong>. All Rights Reserved
+                &copy; <strong><span>TopnetB2B</span></strong>&nbsp; 2021
             </div>
 
 
