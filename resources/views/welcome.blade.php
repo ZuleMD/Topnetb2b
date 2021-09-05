@@ -18,16 +18,16 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="{{asset('vendor2/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('vendor2/icofont/icofont.min.css')}}" rel="stylesheet">
-    <link href="{{asset('vendor2/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
-    <link href="{{asset('vendor2/remixicon/remixicon.css')}}" rel="stylesheet">
-    <link href="{{asset('vendor2/venobox/venobox.css')}}" rel="stylesheet">
-    <link href="{{asset('vendor2/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-    <link href="{{asset('vendor2/aos/aos.css')}}" rel="stylesheet">
+    <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('vendor/icofont/icofont.min.css')}}" rel="stylesheet">
+    <link href="{{asset('vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+    <link href="{{asset('vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+    <link href="{{asset('vendor/venobox/venobox.css')}}" rel="stylesheet">
+    <link href="{{asset('vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{asset('vendor/aos/aos.css')}}" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="{{asset('css2/style.css')}}" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: Arsha - v2.3.1
@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="{{asset('images/hero-img.png')}}" class="img-fluid animated" alt="">
+                    <img src="{{asset('images/B2B.png')}}" class="img-fluid animated" alt="">
                 </div>
             </div>
         </div>
@@ -210,7 +210,7 @@
 
                     <div class="col-lg-6">
                         <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="pic"><img src="{{asset('images/team/team-1.jpg')}}" class="img-fluid" alt=""></div>
+                            <div class="pic"><img src="{{asset('images/team-1.jpg')}}" class="img-fluid" alt=""></div>
                             <div class="member-info">
                                 <h4>Mariem Derbali</h4>
                                 <span>Développeuse web</span>
@@ -259,7 +259,7 @@
                                 <p> +216 71 185 000</p>
                             </div>
 
-                            <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Topnet&t=&z=7&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0;" allowfullscreen></iframe>
+                            <iframe width="400" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Topnet&t=&z=7&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0;" allowfullscreen></iframe>
                         </div>
 
                     </div>
@@ -360,18 +360,18 @@
     <div id="preloader"></div>
 
     <!-- Vendor JS Files -->
-    <script src="{{asset('vendor2/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('vendor2/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('vendor2/jquery.easing/jquery.easing.min.js')}}"></script>
-    <script src="{{asset('vendor2/php-email-form/validate.js')}}"></script>
-    <script src="{{asset('vendor2/waypoints/jquery.waypoints.min.js')}}"></script>
-    <script src="{{asset('vendor2/isotope-layout/isotope.pkgd.min.js')}}"></script>
-    <script src="{{asset('vendor2/venobox/venobox.min.js')}}"></script>
-    <script src="{{asset('vendor2/owl.carousel/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('vendor2/aos/aos.js')}}"></script>
+    <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('vendor/jquery.easing/jquery.easing.min.js')}}"></script>
+    <script src="{{asset('vendor/php-email-form/validate.js')}}"></script>
+    <script src="{{asset('vendor/waypoints/jquery.waypoints.min.js')}}"></script>
+    <script src="{{asset('vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('vendor/venobox/venobox.min.js')}}"></script>
+    <script src="{{asset('vendor/owl.carousel/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('vendor/aos/aos.js')}}"></script>
 
     <!-- Template Main JS File -->
-    <script src="{{asset('js2/main.js')}}"></script>
+    <script src="{{asset('js/main.js')}}"></script>
 
 </body>
 

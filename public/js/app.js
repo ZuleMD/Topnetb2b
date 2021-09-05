@@ -1858,6 +1858,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -37667,14 +37698,67 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col" }, [
-          _c("span", [
-            _c("img", {
-              staticClass: "img-fluid",
-              attrs: { src: "images/dds.png", alt: "" }
-            })
-          ])
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c(
+            "div",
+            {
+              staticClass: "carousel slide",
+              attrs: { id: "demo", "data-ride": "carousel" }
+            },
+            [
+              _c("ol", { staticClass: "carousel-indicators" }, [
+                _c("li", {
+                  staticClass: "active",
+                  attrs: { "data-target": "#myCarousel", "data-slide-to": "0" }
+                }),
+                _vm._v(" "),
+                _c("li", {
+                  attrs: { "data-target": "#myCarousel", "data-slide-to": "1" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "carousel-inner" }, [
+                _c("div", { staticClass: "carousel-item active" }, [
+                  _c("img", {
+                    attrs: {
+                      src:
+                        "https://www.solutionscommerciales.fr/wp-content/uploads/2018/02/prospection-commerciale-btob-solutions-commerciales-1200x800.x74020.jpg",
+                      alt: "B2B"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "carousel-item" }, [
+                  _c("img", {
+                    attrs: {
+                      src:
+                        "https://www.dynamique-mag.com/wp-content/uploads/prospection.jpg",
+                      alt: "B2B"
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "carousel-control-prev",
+                  attrs: { href: "#demo", "data-slide": "prev" }
+                },
+                [_c("span", { staticClass: "carousel-control-prev-icon" })]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "carousel-control-next",
+                  attrs: { href: "#demo", "data-slide": "next" }
+                },
+                [_c("span", { staticClass: "carousel-control-next-icon" })]
+              )
+            ]
+          )
         ])
       ])
     ])

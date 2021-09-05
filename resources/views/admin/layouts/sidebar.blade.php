@@ -1,160 +1,126 @@
-<body>
+<body class="">
+    <div class="wrapper ">
+        <div class="sidebar" data-color="orange">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+            <div class="logo">
+                <a href="#" class="simple-text logo-normal">
+                    <img src="https://www.topnetschool.tn/wp-content/uploads/2020/10/logo-topnet-2.png" alt="logo">
+                </a>
+                <a href="#" class="simple-text logo-normal">
+                    {{ Auth::user()->role->Nom }}
+                </a>
+            </div>
+            <div class="sidebar-wrapper" id="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="active ">
+                        <a href="{{url('dashboard')}}">
+                            <i class="now-ui-icons design_app"></i>
+                            <p>Tableau de bord</p>
+                        </a>
+                    </li>
+                    <!--Admin-->
+                    @if(auth()->check()&& auth()->user()->role->Nom === 'Admin')
+                    <li class="nav-item has-submenu">
+                        <a class="nav-link" href="#"><i class="now-ui-icons business_briefcase-24"></i>
+                            Gestion agence</a>
+                        <ul class="submenu collapse">
+                            <li><a class="nav-link" href="{{route('Agence.create')}}">Ajouter</a></li>
+                            <li><a class="nav-link" href="{{route('Agence.index')}}">Consulter</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
 
-    <div id="app">
+                        <a class="nav-link" href="#">
+                            <i class="now-ui-icons users_single-02"></i>Gestion utilisateur</a>
+                        <ul class="submenu collapse">
+                            <li><a class="nav-link" href="{{route('CommercialPro.create')}}">Ajouter</a></li>
+                            <li><a class="nav-link" href="{{route('CommercialPro.index')}}">Consulter</a></li>
+                        </ul>
+                    </li>
 
-        <div id="sidebar" class="active">
-            <div class="sidebar-wrapper active">
-                <div class="sidebar-header">
-                    <div class="d-flex justify-content-center">
-                        <div class=" logo">
-                            <img src="{{asset('template2/dist/assets/images/logo/logo.png')}}" alt="Logo" srcset="">
-                        </div>
-                        <div class="toggler">
-                            <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="sidebar-menu">
-                    <ul class="menu">
+                    @endif
+                    <!--CommercialPro-->
+                    @if(auth()->check()&& auth()->user()->role->Nom === 'CommercialPro')
+                    <li class="nav-item has-submenu">
 
-                        <li class="sidebar-title">
-                            <div class="ms-3 name">
-                                <h6 class="font-bold"> {{ Auth::user()->role->Nom }}</h6>
-                            </div>
-                        </li>
+                        <a class="nav-link" href="#">
+                            <i class="now-ui-icons users_single-02"></i>Gestion apporteur d'affaires</a>
+                        <ul class="submenu collapse">
+                            <li><a class="nav-link" href="{{route('Apporteur.create')}}">Ajouter</a></li>
+                            <li><a class="nav-link" href="{{route('Apporteur.index')}}">Consulter</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
 
-                        <li class="sidebar-item active ">
-                            <a href="{{url('dashboard')}}" class='sidebar-link'>
-                                <i class="bi bi-graph-up"></i>
-                                <span>Tableau de bord </span>
-                            </a>
-                        </li>
+                        <a class="nav-link" href="#">
+                            <i class="now-ui-icons business_money-coins"></i>Gestion Pack/Offre Commission</a>
+                        <ul class="submenu collapse">
+                            <li><a class="nav-link" href="{{route('Offre.create')}}">Ajouter</a></li>
+                            <li><a class="nav-link" href="{{route('Offre.index')}}">Consulter</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-submenu">
 
-                        @if(auth()->check()&& auth()->user()->role->Nom === 'Admin')
-                        <li class="sidebar-item  has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-briefcase"></i>
-                                <span>Gestion agence</span>
-                            </a>
-                            <ul class="submenu ">
-                                <li class="submenu-item ">
-                                    <a href="{{route('Agence.create')}}">Ajouter</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="{{route('Agence.index')}}">Consulter</a>
-                                </li>
+                        <a class="nav-link" href="#">
+                            <i class="now-ui-icons gestures_tap-01"></i>Consulter opprtunité</a>
+                        <ul class="submenu collapse">
+                            <li><a class="nav-link" href="{{route('Opportunite.index')}}">Consulter</a></li>
+                        </ul>
+                    </li>
+                    @endif
+                    <!--Admin && CommercialPro-->
+                    @if(auth()->check()&& auth()->user()->role->Nom === 'Admin' or auth()->check()&& auth()->user()->role->Nom === 'CommercialPro')
 
-                            </ul>
-                        </li>
+                    <li class="nav-item">
 
+                        <a class="nav-link" href="{{route('Historique.index')}}">
+                            <i class="now-ui-icons education_glasses"></i>Historique</a>
+                    </li>
+                    @endif
+                    <!--ApporteurAffaire-->
+                    @if(auth()->check()&& auth()->user()->role->Nom === 'ApporteurAffaire')
+                    <li class="nav-item has-submenu">
 
-                        <li class="sidebar-item  has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-person-plus"></i>
-                                <span>Gestion utilisateur</span>
-                            </a>
-                            <ul class="submenu ">
-                                <li class="submenu-item ">
-                                    <a href="{{route('CommercialPro.create')}}">Ajouter</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="{{route('CommercialPro.index')}}">Consulter</a>
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li class="sidebar-item  ">
-                            <a href="{{route('Historique.index')}}" class='sidebar-link'>
-                                <i class="bi bi-clock-history"></i>
-                                <span>Historique</span>
-                            </a>
-                        </li>
-
-                        @endif
-
-                        @if(auth()->check()&& auth()->user()->role->Nom === 'CommercialPro')
-                        <li class="sidebar-item  has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-person-plus"></i>
-                                <span>Gestion apporteur d'affaires</span>
-                            </a>
-                            <ul class="submenu ">
-                                <li class="submenu-item ">
-                                    <a href="{{route('Apporteur.create')}}">Ajouter</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="{{route('Apporteur.index')}}">Consulter</a>
-                                </li>
-
-                            </ul>
-                        </li>
-
-                        <li class="sidebar-item  has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-gear"></i>
-                                <span>Gestion Pack/Offre Commission</span>
-                            </a>
-                            <ul class="submenu ">
-                                <li class="submenu-item ">
-                                    <a href="{{route('Offre.create')}}">Ajouter</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="{{route('Offre.index')}}">Consulter</a>
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li class="sidebar-item  has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-person-plus"></i>
-                                <span>Consulter opprtunité</span>
-                            </a>
-                            <ul class="submenu ">
-
-                                <li class="submenu-item ">
-                                    <a href="{{route('Opportunite.index')}}">Consulter</a>
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li class="sidebar-item  ">
-                            <a href="{{route('Historique.index')}}" class='sidebar-link'>
-                                <i class="bi bi-clock-history"></i>
-                                <span>Historique</span>
-                            </a>
-                        </li>
-
-
-                        @endif
-
-
-                        @if(auth()->check()&& auth()->user()->role->Nom === 'ApporteurAffaire')
-
-                        <li class="sidebar-item  has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-person-plus"></i>
-                                <span>Gérer demandes des opportunités</span>
-                            </a>
-                            <ul class="submenu ">
-                                <li class="submenu-item ">
-                                    <a href="{{route('Opportunite.create')}}">Ajouter</a>
-                                </li>
-
-                            </ul>
-                        </li>
-
-                        @endif
-
-
-
-                    </ul>
-                </div>
-                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+                        <a class="nav-link" href="#">
+                            <i class="now-ui-icons business_badge"></i>Gérer demandes des opportunités</a>
+                        <ul class="submenu collapse">
+                            <li><a class="nav-link" href="{{route('Opportunite.create')}}">Ajouter</a></li>
+                        </ul>
+                    </li>
+                    @endif
+                </ul>
             </div>
         </div>
-        <div id="main">
-            <header class="mb-3">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-            </header>
+
+
+        <script>
+            document.querySelectorAll('.sidebar .nav-link').forEach(function(element) {
+
+                element.addEventListener('click', function(e) {
+
+                    let nextEl = element.nextElementSibling;
+                    let parentEl = element.parentElement;
+
+                    if (nextEl) {
+                        e.preventDefault();
+                        let mycollapse = new bootstrap.Collapse(nextEl);
+
+                        if (nextEl.classList.contains('show')) {
+                            mycollapse.hide();
+                        } else {
+                            mycollapse.show();
+                            // find other submenus with class=show
+                            var opened_submenu = parentEl.parentElement.querySelector('.submenu.show');
+                            // if it exists, then close all of them
+                            if (opened_submenu) {
+                                new bootstrap.Collapse(opened_submenu);
+                            }
+                        }
+                    }
+                }); // addEventListener
+            }) // forEach
+
+            // 
+        </script>

@@ -11,17 +11,19 @@
 <div class="container register">
     <div class="row">
         <div class="col-md-3 register-left">
+
+
             <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
             <h3>Bienvenue</h3>
             <p>Vous êtes à 30 secondes de gagner votre propre argent ! </p>
         </div>
-        <div class="col-md-9 register-right">
 
-            @if (session('error'))
-            <div class="alert alert-danger">
-                {{ session('error') }}
-            </div>
-            @endif
+        @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+        @endif
+        <div class="col-md-9 register-right">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
 
@@ -175,6 +177,7 @@
 
     .register-left p {
         font-weight: lighter;
+
         padding: 12%;
         margin-top: -9%;
     }
