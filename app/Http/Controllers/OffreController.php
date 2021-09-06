@@ -12,10 +12,7 @@ use Yajra\DataTables\Facades\Datatables;
 
 class OffreController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('role:Admin,CommercialPro');
-    }
+
     /**
      * Display a listing of the resource.
      *

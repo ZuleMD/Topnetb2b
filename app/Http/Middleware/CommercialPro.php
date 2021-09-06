@@ -17,7 +17,7 @@ class CommercialPro
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::User()->role->Nom == "CommercialPro") {
+        if (Auth::user()->role->Nom == "CommercialPro") {
             return $next($request);
         } else {
             return redirect()->back();

@@ -22,14 +22,13 @@ class AgenceController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function ($agence) {
 
-                    $edit = '<a href="' . route('Agence.edit', $agence->id) . '"><i class="bi bi-pencil"></i></a>';
+                    $edit = '<a href="' . route('Agence.edit', $agence->id) . '"> <i class="now-ui-icons ui-2_settings-90"></i>  </a>';
 
                     $delete = '&nbsp;&nbsp;&nbsp;
                     <form action="' . route('Agence.destroy', $agence->id) . '"method="post">  ' . csrf_field() . '
                     ' . method_field("DELETE") . '
                     <button type="submit">
-                        <i class="bi bi-trash"></i> 
-                    </button>
+                    <i class="now-ui-icons ui-1_simple-remove"></i>                    </button>
 
                 </form>';
 
@@ -40,7 +39,7 @@ class AgenceController extends Controller
                 ->make(true);
         }
 
-        $agences = Agence::get();
+
         return view('admin.agence.index');
     }
 
