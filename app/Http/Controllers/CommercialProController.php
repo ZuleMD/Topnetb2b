@@ -21,8 +21,8 @@ class CommercialProController extends Controller
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($user) {
-                    $view = '<a href="#" data-bs-toggle="modal" data-bs-target="#default' . $user->id . '"> <i class="bi bi-eye"></i></a>';
-                    $edit = '&nbsp;&nbsp;&nbsp; <a href="' . route('CommercialPro.edit', $user->id) . '"><i class="bi bi-pencil"></i></a>';
+                    $view = '<a href="#" data-toggle="modal" data-target="#default' . $user->id . '"> <i class="now-ui-icons education_glasses"></i> </a>';
+                    $edit = '&nbsp;&nbsp;&nbsp; <a href="' . route('CommercialPro.edit', $user->id) . '"><i class="now-ui-icons ui-2_settings-90"></i> </a>';
                     $act = '&nbsp;&nbsp;&nbsp; <a href="' . route('update.statusagent', $user->id) . '"> <button class="btn btn-success"> Activé </button></a>';
                     $des = '&nbsp;&nbsp;&nbsp; <a href="' . route('update.statusagent', $user->id) . '"> <button class="btn btn-danger"> Désactivé </button></a>';
                     $btn = $view . $edit;

@@ -8,6 +8,7 @@ use Yajra\DataTables\Facades\Datatables;
 
 class OpportuniteController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -20,12 +21,9 @@ class OpportuniteController extends Controller
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($opportunite) {
-                    $view = '<a href="#" data-bs-toggle="modal" data-bs-target="#default' . $opportunite->id . '"> <i class="bi bi-eye"></i></a>';
-                    $edit = '&nbsp;&nbsp;&nbsp; <a href="' . route('Apporteur.edit', $opportunite->id) . '"><i class="bi bi-pencil"></i></a>';
+                    $view = '<a href="#" data-toggle="modal" data-target="#default' . $opportunite->id . '"> <i class="now-ui-icons education_glasses"></i></a>';
 
-                    $btn = $view . $edit;
-
-                    return $btn;
+                    return $view;
                 })
                 ->rawColumns(['action'])
                 ->make(true);
@@ -75,7 +73,7 @@ class OpportuniteController extends Controller
             Opportunite::create($data);
 
             return redirect()->back()->with('message', 'Ajouté avec succès!');
-        } elseif ($request['radio'] == 'new') {
+        } else {
 
             $this->validate($request, [
                 'MatriculeFiscal' => 'required|mimes:jpeg,jpg,png',
@@ -85,11 +83,10 @@ class OpportuniteController extends Controller
                 'Tel' => ['required', 'regex:/^[2459]\d{7}$/'],
                 'Nom' => 'required',
                 'Prenom' => 'required',
-
                 'CinGerant' => 'required|mimes:jpeg,jpg,png',
 
             ]);
-            $data = $request->except('CodeClient', 'Offre');
+            $data = $request->except('radio', 'CodeClient', 'Offre');
 
             $name1 = (new Opportunite)->raisonSociale($request);
 
@@ -104,6 +101,7 @@ class OpportuniteController extends Controller
             $data['CinGerant'] = $name3;
 
             Opportunite::create($data);
+
             return redirect()->back()->with('message', 'Ajouté avec succès!');
         }
     }

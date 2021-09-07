@@ -1,7 +1,7 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" href="{{asset('css2/style.css')}}">
+<link rel="stylesheet" href="{{asset('css/style.css')}}">
 
 <title>TopnetB2B </title>
 
@@ -15,20 +15,20 @@
 
         <div class="col-md-3 register-left">
 
-
             <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
             <h3>Bienvenue</h3>
             <p>Vous êtes à 30 secondes de gagner votre propre argent ! </p>
             <a href="{{ route('register') }}"><input type="submit" style="width: 80%;" name="" value="Créer mon compte" /></a><br />
         </div>
 
-        @if (session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
-        @endif
         <div class="col-md-9 register-right">
 
+
+            @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+            @endif
 
             <form method="POST" action="{{ route('login') }}">
                 @csrf
@@ -43,7 +43,7 @@
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                 </div>
                                 @error('email')
-                                <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback d-block" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
@@ -55,7 +55,7 @@
                                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Mot de passe" name="password" required autocomplete="current-password">
                                 </div>
                                 @error('password')
-                                <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback d-block" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
@@ -105,6 +105,7 @@
         cursor: pointer;
     }
 
+
     .register-right {
         background: #f8f9fa;
         border-top-left-radius: 10% 50%;
@@ -144,6 +145,7 @@
         padding: 12%;
         margin-top: -9%;
     }
+
 
     .register .register-form {
         padding: 10%;

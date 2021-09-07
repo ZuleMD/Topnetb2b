@@ -10,7 +10,7 @@
                         <span class="navbar-toggler-bar bar3"></span>
                     </button>
                 </div>
-                <a class="navbar-brand" href="#pablo">Tableau de bord</a>
+                <a class="navbar-brand" href="{{url('dashboard')}}">Tableau de bord</a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -25,13 +25,15 @@
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                             <div class="d-flex align-items-center">
-
+                                @if(Auth::user()->Image!=null)
                                 <div class="avatar avatar-xl">
                                     <img src="{{asset('images')}}/{{ Auth::user()->Image}}" class="table-user-thumb" alt="" width="200">
 
                                 </div>
+                                @endif
+
                                 <div class="ms-3 name">
-                                    <strong>{{Auth::user()->Nom}}</strong>
+                                    &nbsp; &nbsp; <strong>{{Auth::user()->Nom}}</strong>
                                 </div>
                             </div>
                         </a>
@@ -51,10 +53,11 @@
             </div>
         </div>
     </nav>
-    <style>
-        .avatar {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-        }
-    </style>
+</div>
+<style>
+    .avatar {
+        width: 50px;
+        height: 40px;
+        border-radius: 50%;
+    }
+</style>

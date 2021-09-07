@@ -2,64 +2,65 @@
 
 @section('content')
 
+<body class="">
+    <div class="wrapper ">
 
-<section class="section">
-    <div class="row" id="table-head">
-        @if(Session::has('message'))
-        <div class="alert bg-success alert-success text-white" role="alert">
-            {{Session::get('message')}}
-        </div>
-        @endif
+        <div class="main-panel" id="main-panel">
 
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Consulter les opportunités </h4>
-                </div>
-                <div class="card-content">
-                    <div class="card-body">
+            <div class="panel-header panel-header-sm">
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        @if(Session::has('message'))
+                        <div class="alert bg-success alert-success text-white" role="alert">
+                            {{Session::get('message')}}
+                        </div>
+                        @endif
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Consulter les opportunités </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table" id="opportuniteTable">
+                                        <thead class="text-primary">
+                                            <th>Id</th>
+                                            <th>Code client</th>
+                                            <th>Registre Commerce</th>
+                                            <th>Nom</th>
+                                            <th>Prénom</th>
+                                            <th>Adresse</th>
+                                            <th>Téléphone</th>
+                                            <th>Offre</th>
+                                            <th scope="col" width="150px"></th>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($opportunites as $opportunite)
+                                            <!-- View Modal -->
 
-                    </div>
-                    <!-- table head dark -->
-                    <!-- table head dark -->
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="opportuniteTable">
-                            <thead>
-                                <tr>
+                                            @include('ApporteurAffaire.Opportunite.Modal')
 
-                                    <th scope="col">Id</th>
-                                    <th scope="col">Code client</th>
-                                    <th scope="col">Registre Commerce</th>
-                                    <th scope="col">Nom</th>
-                                    <th scope="col">Prénom</th>
-                                    <th scope="col">Adresse</th>
-                                    <th scope="col">Téléphone</th>
-                                    <th scope="col">Offre</th>
-                                    <th scope="col" width="150px"></th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                @foreach($opportunites as $opportunite)
-                                <!-- View Modal -->
-
-                                @include('ApporteurAffaire.Opportunite.Modal')
-
-                                @endforeach
+                                            @endforeach
 
 
-
-                            </tbody>
-                        </table>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
+</body>
 
-</section>
+</html>
+
+
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -129,14 +130,4 @@
 <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
 
 
-
-
 @endsection
-<style>
-    footer {
-
-        bottom: 0;
-        position: fixed;
-
-    }
-</style>

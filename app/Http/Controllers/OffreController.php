@@ -25,8 +25,8 @@ class OffreController extends Controller
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($offre) {
-                    $view = '<a href="#" data-bs-toggle="modal" data-bs-target="#default' . $offre->id . '"> <i class="bi bi-eye"></i></a>';
-                    $edit = '&nbsp;&nbsp;&nbsp; <a href="' . route('Offre.edit', $offre->id) . '"><i class="bi bi-pencil"></i></a>';
+                    $view = '<a href="#" data-toggle="modal" data-target="#default' . $offre->id . '"> <i class="now-ui-icons education_glasses"></i></a>';
+                    $edit = '&nbsp;&nbsp;&nbsp; <a href="' . route('Offre.edit', $offre->id) . '"><i class="now-ui-icons ui-2_settings-90"></i></a>';
                     $acti = '&nbsp;&nbsp;&nbsp; <span class="badge badge-success"> Activé </span>';
                     $des = '&nbsp;&nbsp;&nbsp; <span class="badge badge-danger"> Désactivé </span>';
                     $act = $view . $edit;
@@ -80,7 +80,6 @@ class OffreController extends Controller
         $existMnt = Offre::where($mnt)->exists();
 
         $record = $request->all();
-        // Offre::updateOrCreate($record, $mnt);
 
         if ($existOffres && !$existMnt) {
             Offre::create($record);
@@ -93,7 +92,7 @@ class OffreController extends Controller
             Session::flash('message', 'Offre modifié avec succès!');
         } else if ($existOffres && $existMnt) {
 
-            Session::flash('existe', "L'offre existe déjà avec la même commission Montant ! !");
+            Session::flash('exists', "L'offre existe déjà avec la même commission Montant ! !");
         } else if (!$existOffres) {
             Offre::create($record);
 

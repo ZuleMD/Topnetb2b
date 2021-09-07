@@ -28,7 +28,7 @@
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="">Nom d'agence</label>
-                                                    <input type="text" class="form-control @error('Agence') is-invalid @enderror" value="{{$agence->Agence}}" name="Agence">
+                                                    <input type="text" class="form-control @error('Agence') is-invalid @enderror" value="{{$agence->Agence}}" name="Agence" disabled>
                                                     @error('Agence')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>

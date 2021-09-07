@@ -48,18 +48,20 @@ Route::group(['middleware' => ['auth', 'web']], function () {
     Route::resource('Historique', 'AuditController');
 });
 
-//Opportunités
-Route::group(['middleware' => ['auth', 'web']], function () {
-    Route::resource('Opportunite', 'OpportuniteController');
-});
 
 Route::group(['middleware' => ['auth', 'CommercialPro']], function () {
     //Apporteur
     Route::resource('Apporteur', 'ApporteurController');
+    //Activé ou Déactivé apporteur
     Route::get('/statusapporteur/update/{id}', 'ApporteurController@toggleStatus')->name('update.statusapporteur');
     //Offre
     Route::resource('Offre', 'OffreController');
+
+    //Opportunité
+    Route::resource('Opportunite', 'OpportuniteController')->only(['index']);
 });
 
 Route::group(['middleware' => ['auth', 'ApporteurAffaire']], function () {
+    //Opportunité
+    Route::resource('Opportunite', 'OpportuniteController')->except(['index']);
 });

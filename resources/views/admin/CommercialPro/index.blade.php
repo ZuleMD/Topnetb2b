@@ -2,66 +2,60 @@
 
 @section('content')
 
+<body class="">
+    <div class="wrapper ">
 
+        <div class="main-panel" id="main-panel">
 
-<section class="section">
-    <div class="row" id="table-head">
-        @if(Session::has('message'))
-        <div class="alert bg-success alert-success text-white" role="alert">
-            {{Session::get('message')}}
-        </div>
-        @endif
+            <div class="panel-header panel-header-sm">
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        @if(Session::has('message'))
+                        <div class="alert bg-success alert-success text-white" role="alert">
+                            {{Session::get('message')}}
+                        </div>
+                        @endif
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Consulter les utilisateurs</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table" id=usersTable>
+                                        <thead class="text-primary">
+                                            <th>Matricule</th>
+                                            <th>Nom</th>
+                                            <th>Prénom</th>
+                                            <th>Email</th>
+                                            <th>Adresse</th>
+                                            <th>Téléphone</th>
+                                            <th>Cin/Passeport</th>
+                                            <th>Agence</th>
+                                            <th scope="col" width="150px"></th>
+                                        </thead>
+                                        <tbody>
+                                            <!-- View Modal -->
+                                            @foreach($users as $user)
+                                            @include('admin.CommercialPro.modal')
+                                            @endforeach
 
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Consulter les utilisateurs </h4>
-                </div>
-                <div class="card-content">
-                    <div class="card-body">
-
-                    </div>
-                    <!-- table head dark -->
-                    <!-- table head dark -->
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="usersTable">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Matricule</th>
-                                    <th scope="col">Nom</th>
-                                    <th scope="col">Prénom</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Adresse</th>
-                                    <th scope="col">Téléphone</th>
-                                    <th scope="col">Cin/Passeport</th>
-                                    <th scope="col">Agence</th>
-                                    <th scope="col" width="150px"></th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @if(count($users)>0)
-                                @foreach($users as $user)
-                                <!-- View Modal -->
-
-                                @include('admin.CommercialPro.Modal')
-
-                                @endforeach
-
-                                @else
-                                <td>Aucun utilisateur à afficher</td>
-                                @endif
-
-                            </tbody>
-                        </table>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
+</body>
 
-</section>
+</html>
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -131,11 +125,3 @@
 
 
 @endsection
-<style>
-    footer {
-
-        bottom: 0;
-        position: fixed;
-
-    }
-</style>

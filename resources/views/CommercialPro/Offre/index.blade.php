@@ -2,63 +2,65 @@
 
 @section('content')
 
+<body class="">
+    <div class="wrapper ">
+
+        <div class="main-panel" id="main-panel">
+
+            <div class="panel-header panel-header-sm">
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        @if(Session::has('message'))
+                        <div class="alert bg-success alert-success text-white" role="alert">
+                            {{Session::get('message')}}
+                        </div>
+                        @endif
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Consulter Pack/Offre Commission </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table" id="offreTable">
+                                        <thead class="text-primary">
+                                            <th>Id</th>
+                                            <th>Référence offre</th>
+                                            <th>Référence produit</th>
+                                            <th>Montant commission</th>
+
+                                            <th scope="col" width="150px"></th>
+                                        </thead>
+                                        <tbody>
+                                            @if(count($offres)>0)
+                                            @foreach($offres as $offre)
+                                            <!-- View Modal -->
+
+                                            @include('CommercialPro.Offre.Modal')
+
+                                            @endforeach
+
+                                            @else
+                                            <td>Aucun utilisateur à afficher</td>
+                                            @endif
 
 
-<section class="section">
-    <div class="row" id="table-head">
-        @if(Session::has('message'))
-        <div class="alert bg-success alert-success text-white" role="alert">
-            {{Session::get('message')}}
-        </div>
-        @endif
-
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Consulter Pack/Offre Commission </h4>
-                </div>
-                <div class="card-content">
-                    <div class="card-body">
-
-                    </div>
-                    <!-- table head dark -->
-                    <!-- table head dark -->
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="offreTable">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Id</th>
-                                    <th scope="col">Référence offre</th>
-                                    <th scope="col">Référence produit</th>
-                                    <th scope="col">Montant commission</th>
-                                    <th scope="col" width="150px"></th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @if(count($offres)>0)
-                                @foreach($offres as $offre)
-                                <!-- View Modal -->
-
-                                @include('CommercialPro.Offre.Modal')
-
-                                @endforeach
-
-                                @else
-                                <td>Aucun utilisateur à afficher</td>
-                                @endif
-
-                            </tbody>
-                        </table>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
+</body>
 
-</section>
-
+</html>
 <script type="text/javascript">
     $(document).ready(function() {
         var table = $('#offreTable').DataTable({
@@ -114,11 +116,3 @@
 
 
 @endsection
-<style>
-    footer {
-
-        bottom: 0;
-        position: fixed;
-
-    }
-</style>

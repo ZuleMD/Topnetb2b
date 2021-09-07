@@ -2,65 +2,62 @@
 
 @section('content')
 
+<body class="">
+    <div class="wrapper ">
+
+        <div class="main-panel" id="main-panel">
+
+            <div class="panel-header panel-header-sm">
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        @if(Session::has('message'))
+                        <div class="alert bg-success alert-success text-white" role="alert">
+                            {{Session::get('message')}}
+                        </div>
+                        @endif
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Consulter les apporteurs d'affaires </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table" id="apporteurTable">
+                                        <thead class="text-primary">
+                                            <th>Matricule fiscal</th>
+                                            <th>Code client</th>
+                                            <th>Raison sociale</th>
+                                            <th>Registre Commerce</th>
+                                            <th>Email</th>
+                                            <th>Adresse</th>
+                                            <th>Téléphone</th>
+                                            <th scope="col" width="150px"></th>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($apporteurs as $apporteur)
+                                            <!-- View Modal -->
+
+                                            @include('CommercialPro.Apporteur.Modal')
+
+                                            @endforeach
 
 
-<section class="section">
-    <div class="row" id="table-head">
-        @if(Session::has('message'))
-        <div class="alert bg-success alert-success text-white" role="alert">
-            {{Session::get('message')}}
-        </div>
-        @endif
-
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Consulter les apporteurs d'affaires </h4>
-                </div>
-                <div class="card-content">
-                    <div class="card-body">
-
-                    </div>
-                    <!-- table head dark -->
-                    <!-- table head dark -->
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="apporteurTable">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Matricule fiscal</th>
-                                    <th scope="col">Code client</th>
-                                    <th scope="col">Raison sociale</th>
-                                    <th scope="col">Registre Commerce</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Adresse</th>
-                                    <th scope="col">Téléphone</th>
-                                    <th scope="col" width="150px"></th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @if(count($apporteurs)>0)
-                                @foreach($apporteurs as $apporteur)
-                                <!-- View Modal -->
-
-                                @include('CommercialPro.Apporteur.Modal')
-
-                                @endforeach
-
-                                @else
-                                <td>Aucun utilisateur à afficher</td>
-                                @endif
-
-                            </tbody>
-                        </table>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
+</body>
 
-</section>
+</html>
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -124,12 +121,5 @@
 
 
 
+
 @endsection
-<style>
-    footer {
-
-        bottom: 0;
-        position: fixed;
-
-    }
-</style>
