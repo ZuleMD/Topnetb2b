@@ -81,8 +81,8 @@ class OpportuniteController extends Controller
                 'RegistreCommerce' => 'required',
                 'Adresse' => 'required',
                 'Tel' => ['required', 'regex:/^[2459]\d{7}$/'],
-                'Nom' => 'required',
-                'Prenom' => 'required',
+                'Nom' => 'required|alpha',
+                'Prenom' => 'required|alpha',
                 'CinGerant' => 'required|mimes:jpeg,jpg,png',
 
             ]);
@@ -148,8 +148,8 @@ class OpportuniteController extends Controller
             'RegistreCommerce' => 'required',
             'Adresse' => 'required',
             'Tel' => ['required', 'regex:/^[2459]\d{7}$/'],
-            'Nom' => 'required',
-            'Prenom' => 'required',
+            'Nom' => 'required|alpha',
+            'Prenom' => 'required|alpha',
             'Offre' => 'required',
             'CinGerant' => 'required|mimes:jpeg,jpg,png',
 

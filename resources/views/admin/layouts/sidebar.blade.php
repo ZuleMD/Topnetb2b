@@ -3,7 +3,7 @@
         <div class="sidebar" data-color="orange">
 
             <div class="logo">
-                <a href="#" class="simple-text logo-normal">
+                <a href="{{url('dashboard')}}" class="simple-text logo-normal">
                     <img src="https://www.topnetschool.tn/wp-content/uploads/2020/10/logo-topnet-2.png" alt="logo">
                 </a>
                 <a href="#" class="simple-text logo-normal">

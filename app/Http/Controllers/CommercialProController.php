@@ -137,8 +137,8 @@ class CommercialProController extends Controller
     {
         return $this->validate($request, [
             'Matricule' => 'required|unique:users',
-            'Nom' => 'required',
-            'Prenom' => 'required',
+            'Nom' => 'required|alpha',
+            'Prenom' => 'required|alpha',
             'email' => 'required|unique:users',
 
             'Adresse' => 'required',

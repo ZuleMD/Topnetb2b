@@ -62,8 +62,8 @@ class AgenceController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'Agence' => 'required',
-            'ChefAgence' => 'required',
+            'Agence' => 'required|alpha',
+            'ChefAgence' => 'required|alpha',
             'Adresse' => 'required',
             'Tel' => ['required', 'regex:/^[2459]\d{7}$/'],
 
@@ -106,7 +106,7 @@ class AgenceController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'ChefAgence' => 'required',
+            'ChefAgence' => 'required|alpha',
             'Adresse' => 'required',
             'Tel' => ['required', 'regex:/^[2459]\d{7}$/'],
         ]);

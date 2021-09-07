@@ -109,7 +109,7 @@ class OffreController extends Controller
         return $this->validate($request, [
             'RefOffre' => 'required',
             'RefProduit' => 'required',
-            'MontantCommission' => 'required',
+            'MontantCommission' => 'required|numeric',
 
         ]);
     }
