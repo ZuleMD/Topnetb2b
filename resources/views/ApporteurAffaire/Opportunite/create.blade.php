@@ -40,23 +40,21 @@
 
                                         <div class="row">
 
-                                            <div class="col-md-12 col-12">
-
-                                                <div class="col-md-6 col-12">
-                                                    <div class="form-group">
-                                                        <label>Raison sociale</label>
-                                                        <div class="custom-file">
-                                                            <input type="file" class="custom-file-input" id="inputGroupFile01" name="RaisonSociale" aria-describedby="inputGroupFileAddon01">
-                                                            <label class="custom-file-label" for="inputGroupFile01">Raison Sociale</label>
-                                                        </div>
-                                                        @error('RaisonSociale')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                        @enderror
+                                            <div class="col-md-6 col-12">
+                                                <div class="form-group">
+                                                    <label>Raison sociale</label>
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="inputGroupFile01" name="RaisonSociale" aria-describedby="inputGroupFileAddon01">
+                                                        <label class="custom-file-label" for="inputGroupFile01">Raison Sociale</label>
                                                     </div>
+                                                    @error('RaisonSociale')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
                                                 </div>
                                             </div>
+
                                         </div>
                                         <!--old client-->
 
@@ -97,23 +95,22 @@
                                         <span id="ifYes" style="display:none;">
                                             <div class="row">
 
-                                                <div class="col-md-6 col-12">
 
-                                                    <div class="col-md-6 col-12">
-                                                        <div class="form-group">
-                                                            <label>MatriculeFiscal</label>
-                                                            <div class="custom-file">
-                                                                <input type="file" class="custom-file-input" id="inputGroupFile01" name="MatriculeFiscal" aria-describedby="inputGroupFileAddon01">
-                                                                <label class="custom-file-label" for="inputGroupFile01">Matricule Fiscal</label>
-                                                            </div>
-                                                            @error('MatriculeFiscal')
-                                                            <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $message }}</strong>
-                                                            </span>
-                                                            @enderror
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-group">
+                                                        <label>MatriculeFiscal</label>
+                                                        <div class="custom-file">
+                                                            <input type="file" class="custom-file-input" id="inputGroupFile01" name="MatriculeFiscal" aria-describedby="inputGroupFileAddon01">
+                                                            <label class="custom-file-label" for="inputGroupFile01">Matricule Fiscal</label>
                                                         </div>
+                                                        @error('MatriculeFiscal')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
                                                     </div>
                                                 </div>
+
 
 
 

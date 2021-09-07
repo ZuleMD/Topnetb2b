@@ -14,21 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
 
+
+Auth::routes();
 
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-
-
 Route::get('/home', 'HomeController@index')->name('home');
 
+//Empecher le retour en arriere 
 Route::get('/dashboard', function () {
     return view('dashboard');
-});
+})->middleware('prevent-back-history')->middleware('auth');
 
 
 

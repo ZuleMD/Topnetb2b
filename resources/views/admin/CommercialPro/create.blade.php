@@ -27,9 +27,9 @@
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="">Matricule</label>
-                                                    <input type="text" class="form-control @error('Matricule') is-invalid @enderror" placeholder="Matricule" name="Matricule" value="                   {{old('Matricule')}}">
+                                                    <input type="text" class="form-control @error('Matricule') is-invalid @enderror" placeholder="Matricule" name="Matricule" value="{{old('Matricule')}}">
                                                     @error('Matricule')
-                                                    <span class="invalid-feedback" role="alert">
+                                                    <span class=" invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
                                                     @enderror
@@ -62,7 +62,7 @@
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="">Email</label>
-                                                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="email" value="                   {{old('email')}}">
+                                                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="email" value="{{old('email')}}">
                                                     @error('email')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -87,7 +87,7 @@
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="">Adresse</label>
-                                                    <input type="text" class="form-control @error('Adresse') is-invalid @enderror" placeholder="Adresse" name="Adresse" value="                   {{old('Adresse')}}">
+                                                    <input type="text" class="form-control @error('Adresse') is-invalid @enderror" placeholder="Adresse" name="Adresse" value="{{old('Adresse')}}">
                                                     @error('Adresse')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -99,7 +99,7 @@
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="">Téléphone</label>
-                                                    <input type="text" name="Tel" class="form-control @error('Tel') is-invalid @enderror" placeholder="Téléphone" value="                   {{old('Tel')}}">
+                                                    <input type="text" name="Tel" class="form-control @error('Tel') is-invalid @enderror" placeholder="Téléphone" value="{{old('Tel')}}">
                                                     @error('Tel')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -136,7 +136,7 @@
                                             <div class="col-md-6 col-12">
                                                 <div class="form-group">
                                                     <label for="">N°cin/N°passeport</label>
-                                                    <input type="text" name="CinPasseport" class="form-control @error('CinPasseport') is-invalid @enderror" placeholder="N°cin/N°passeport" value="                   {{old('CinPassport')}}">
+                                                    <input type="text" name="CinPasseport" class="form-control @error('CinPasseport') is-invalid @enderror" placeholder="N°cin/N°passeport" value="{{old('CinPassport')}}">
                                                     @error('CinPasseport')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>

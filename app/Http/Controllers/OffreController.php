@@ -92,7 +92,7 @@ class OffreController extends Controller
             Session::flash('message', 'Offre modifié avec succès!');
         } else if ($existOffres && $existMnt) {
 
-            Session::flash('exists', "L'offre existe déjà avec la même commission Montant ! !");
+            Session::flash('exists', "L'offre existe déjà avec la même montant commission  ! !");
         } else if (!$existOffres) {
             Offre::create($record);
 

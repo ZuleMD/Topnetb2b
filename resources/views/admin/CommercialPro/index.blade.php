@@ -25,6 +25,7 @@
                                 <div class="table-responsive">
                                     <table class="table" id=usersTable>
                                         <thead class="text-primary">
+                                            <th>Id</th>
                                             <th>Matricule</th>
                                             <th>Nom</th>
                                             <th>Prénom</th>
@@ -66,7 +67,13 @@
             language: {
                 "url": "http://cdn.datatables.net/plug-ins/1.10.10/i18n/French.json"
             },
+            order: [
+                [0, "asc"]
+            ],
             columns: [{
+                    data: 'id',
+                    name: 'id'
+                }, {
                     data: 'Matricule',
                     name: 'Matricule'
                 },

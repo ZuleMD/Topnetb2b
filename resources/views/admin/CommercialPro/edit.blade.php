@@ -166,13 +166,13 @@
 
 
 
-                                        <div class="col-md-4 pl-1">
+                                        <div class="col-md-6 col-12">
                                             <div class="form-group">
                                                 <label>Image</label>
-                                                <input type="file" class="form-control file-upload-info @error('Image') is-invalid @enderror" placeholder="Télécharger une image" name="Image">
-                                                <span class="input-group-append">
-
-                                                </span>
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="inputGroupFile01" name="Image" aria-describedby="inputGroupFileAddon01">
+                                                    <label class="custom-file-label" for="inputGroupFile01">Télécharger une image</label>
+                                                </div>
                                                 @error('Image')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -180,6 +180,7 @@
                                                 @enderror
                                             </div>
                                         </div>
+
 
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">
