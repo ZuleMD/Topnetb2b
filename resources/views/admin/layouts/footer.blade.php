@@ -2,7 +2,7 @@
 
     <div class="container footer-bottom clearfix">
         <div class="copyright">
-            &copy; <strong><span>TopnetB2B</span></strong>&nbsp; 2021
+            <p> &copy; <strong><span>TopnetB2B</span></strong>&nbsp; 2021</p>
         </div>
 
 

@@ -10,6 +10,8 @@ use LdapRecord\Laravel\Auth\AuthenticatesWithLdap;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use Illuminate\Support\Arr;
+
 class User extends Authenticatable implements Auditable
 {
     use HasFactory, Notifiable, AuthenticatesWithLdap;
@@ -71,6 +73,7 @@ class User extends Authenticatable implements Auditable
     {
         return $this->hasOne('App\Models\Role', 'id', 'Role_id');
     }
+
 
     public function userAvatar($request)
     {

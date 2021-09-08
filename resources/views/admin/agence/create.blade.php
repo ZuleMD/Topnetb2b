@@ -8,9 +8,13 @@
         <div class="main-panel" id="main-panel">
 
             <div class="panel-header panel-header-sm">
+
             </div>
+
             <div class="content">
                 <div class="row">
+
+
                     <div class="col-md-8 ml-auto mr-auto">
                         @if(Session::has('message'))
                         <div class="alert bg-success alert-success text-white" role="alert">
@@ -84,6 +88,6 @@
             </div>
 
         </div>
-    </div>
 
-    @endsection
+
+        @endsection

@@ -46,13 +46,13 @@
                                                         @foreach($audit->old_values as $attribute => $value)
                                                         <tr>
 
-                                                            @if($value==1)
+                                                            @if($attribute=='Etat'&& $value==0)
 
                                                             <td><b>{{ $attribute }}</b>&nbsp;&nbsp;
                                                                 désactivé
                                                             </td>
 
-                                                            @elseif ($value==0)
+                                                            @elseif ($attribute=='Etat' && $value==1)
                                                             <td><b>{{ $attribute }}</b>&nbsp;&nbsp;
                                                                 activé
                                                             </td>
@@ -61,6 +61,8 @@
                                                                 {{ $value }}
                                                             </td>
                                                             @endif
+
+
 
                                                         </tr>
                                                         @endforeach
@@ -71,13 +73,13 @@
                                                         @foreach($audit->new_values as $attribute => $value)
                                                         <tr>
 
-                                                            @if($value==1)
+                                                            @if($attribute=='Etat'&& $value==0)
 
                                                             <td><b>{{ $attribute }}</b>&nbsp;&nbsp;
                                                                 désactivé
                                                             </td>
 
-                                                            @elseif ($value==0)
+                                                            @elseif ($attribute=='Etat' && $value==1)
                                                             <td><b>{{ $attribute }}</b>&nbsp;&nbsp;
                                                                 activé
                                                             </td>
@@ -109,6 +111,8 @@
 </body>
 
 </html>
+
+
 
 
 @endsection

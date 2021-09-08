@@ -32,36 +32,41 @@ Route::get('/dashboard', function () {
 
 
 
-Route::group(['middleware' => ['auth', 'Admin']], function () {
-
-    //Utilisateur
-    Route::resource('CommercialPro', 'CommercialProController');
-    //Agence
-    Route::resource('Agence', 'AgenceController');
-    //Activé ou Déactivé utilisateur
-    Route::get('/statusagent/update/{id}', 'CommercialProController@toggleStatus')->name('update.statusagent');
-});
+//Empecher le retour en arriere 
+Route::group(['middleware' => 'prevent-back-history'], function () {
 
 
-//Historique
-Route::group(['middleware' => ['auth', 'web']], function () {
-    Route::resource('Historique', 'AuditController');
-});
+    Route::group(['middleware' => ['auth', 'Admin']], function () {
+
+        //Utilisateur
+        Route::resource('CommercialPro', 'CommercialProController');
+        //Agence
+        Route::resource('Agence', 'AgenceController');
+        //Activé ou Déactivé utilisateur
+        Route::get('/statusagent/update/{id}', 'CommercialProController@toggleStatus')->name('update.statusagent');
+    });
 
 
-Route::group(['middleware' => ['auth', 'CommercialPro']], function () {
-    //Apporteur
-    Route::resource('Apporteur', 'ApporteurController');
-    //Activé ou Déactivé apporteur
-    Route::get('/statusapporteur/update/{id}', 'ApporteurController@toggleStatus')->name('update.statusapporteur');
-    //Offre
-    Route::resource('Offre', 'OffreController');
+    //Historique
+    Route::group(['middleware' => ['auth', 'web']], function () {
+        Route::resource('Historique', 'AuditController');
+    });
 
-    //Opportunité
-    Route::resource('Opportunite', 'OpportuniteController')->only(['index']);
-});
 
-Route::group(['middleware' => ['auth', 'ApporteurAffaire']], function () {
-    //Opportunité
-    Route::resource('Opportunite', 'OpportuniteController')->except(['index']);
+    Route::group(['middleware' => ['auth', 'CommercialPro']], function () {
+        //Apporteur
+        Route::resource('Apporteur', 'ApporteurController');
+        //Activé ou Déactivé apporteur
+        Route::get('/statusapporteur/update/{id}', 'ApporteurController@toggleStatus')->name('update.statusapporteur');
+        //Offre
+        Route::resource('Offre', 'OffreController');
+
+        //Opportunité
+        Route::resource('Opportunite', 'OpportuniteController')->only(['index']);
+    });
+
+    Route::group(['middleware' => ['auth', 'ApporteurAffaire']], function () {
+        //Opportunité
+        Route::resource('Opportunite', 'OpportuniteController')->except(['index']);
+    });
 });

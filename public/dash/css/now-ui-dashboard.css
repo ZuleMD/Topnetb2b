@@ -2477,6 +2477,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   line-height: 1.625rem;
+  margin-top: 50px;
 }
 
 .navbar .navbar-toggler {
@@ -4187,7 +4188,7 @@ Created using IcoMoon - icomoon.io
 .main-panel>.content {
   padding: 0 30px 30px;
   min-height: calc(100vh - 123px);
-  margin-top: -30px;
+  margin-top: 30px;
 }
 
 .main-panel>.navbar {
@@ -4251,19 +4252,23 @@ Created using IcoMoon - icomoon.io
 --------------------------------------------------------------*/
 #footer {
   font-size: 14px;
-  background: #37517e;
+  background: #0c2646 ;
+  clear: both;
+
 }
 
 
 
 #footer .footer-bottom {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   color: #fff;
+  
 }
 
 #footer .copyright {
   margin-left: 10%;
+  
 }
 
 

@@ -78,7 +78,7 @@
                                         <div class="col-md-4 px-1">
                                             <div class="form-group">
                                                 <label for="">Mot de passe</label>
-                                                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" value="{{$user->password}}" disabled>
+                                                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" value="{{$user->Password}}" disabled>
                                                 @error('password')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -170,7 +170,7 @@
                                             <div class="form-group">
                                                 <label>Image</label>
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="inputGroupFile01" name="Image" aria-describedby="inputGroupFileAddon01">
+                                                    <input type="file" class="custom-file-input" id="inputGroupFile01" name="Image" aria-describedby="inputGroupFileAddon01" value="{{$user->Image}}">
                                                     <label class="custom-file-label" for="inputGroupFile01">Télécharger une image</label>
                                                 </div>
                                                 @error('Image')
@@ -200,7 +200,7 @@
                             <div class="card-body">
                                 <div class="author">
 
-                                    <img class="avatar border-gray" src="{{asset('images')}}/{{ Auth::user()->Image}}" alt="...">
+                                    <img class="avatar border-gray" src="{{asset('images')}}/{{ $user->Image}}" alt="...">
                                     <h5 class="title">{{$user->Nom}}</h5>
 
                                     <p class="description">

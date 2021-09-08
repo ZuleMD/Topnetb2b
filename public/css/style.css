@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   z-index: 9999;
   overflow: hidden;
-  background: #37517e;
+  background: #0c2646;
 }
 
 #preloader:before {
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid #37517e;
+  border: 6px solid #0c2646;
   border-top-color: #fff;
   border-bottom-color: #fff;
   border-radius: 50%;
@@ -317,7 +317,7 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav a {
   display: block;
   position: relative;
-  color: #37517e;
+  color: #0c2646;
   padding: 10px 20px;
   font-weight: 500;
   outline: none;
@@ -385,7 +385,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 80vh;
-  background: #37517e;
+  background: #0c2646;
 }
 
 #hero .container {
@@ -544,7 +544,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #37517e;
+  color: #0c2646;
 }
 
 .section-title h2::before {
@@ -668,7 +668,7 @@ section {
 .why-us .content h3 {
   font-weight: 400;
   font-size: 34px;
-  color: #37517e;
+  color: #0c2646;
 }
 
 .why-us .content h4 {
@@ -788,7 +788,7 @@ section {
 .skills .content h3 {
   font-weight: 700;
   font-size: 32px;
-  color: #37517e;
+  color: #0c2646;
   font-family: "Poppins", sans-serif;
 }
 
@@ -824,7 +824,7 @@ section {
   display: block;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
-  color: #37517e;
+  color: #0c2646;
 }
 
 .skills .progress .skill .val {
@@ -870,7 +870,7 @@ section {
 }
 
 .services .icon-box h4 a {
-  color: #37517e;
+  color: #0c2646;
   transition: ease-in-out 0.3s;
 }
 
@@ -1064,7 +1064,7 @@ section {
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 20px;
-  color: #37517e;
+  color: #0c2646;
 }
 
 .team .member span {
@@ -1110,7 +1110,7 @@ section {
 }
 
 .team .member .social a i {
-  color: #37517e;
+  color: #0c2646;
   font-size: 16px;
   margin: 0 2px;
 }
@@ -1147,12 +1147,12 @@ section {
   font-weight: 500;
   margin-bottom: 15px;
   font-size: 20px;
-  color: #37517e;
+  color: #0c2646;
 }
 
 .pricing h4 {
   font-size: 48px;
-  color: #37517e;
+  color: #0c2646;
   font-weight: 400;
   font-family: "Jost", sans-serif;
   margin-bottom: 25px;
@@ -1312,7 +1312,7 @@ section {
 }
 
 .faq .faq-list a.collapsed {
-  color: #37517e;
+  color: #0c2646;
   transition: 0.3s;
 }
 
@@ -1365,7 +1365,7 @@ section {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #37517e;
+  color: #0c2646;
 }
 
 .contact .info p {
@@ -1540,7 +1540,7 @@ section {
 .breadcrumbs h2 {
   font-size: 28px;
   font-weight: 600;
-  color: #37517e;
+  color: #0c2646;
 }
 
 .breadcrumbs ol {
@@ -1655,7 +1655,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
   font-size: 14px;
-  background: #37517e;
+  background: #0c2646;
 }
 
 #footer .footer-newsletter {
@@ -1672,7 +1672,7 @@ section {
   padding: 0;
   line-height: 1;
   font-weight: 600;
-  color: #37517e;
+  color: #0c2646;
 }
 
 #footer .footer-newsletter form {
@@ -1727,7 +1727,7 @@ section {
   line-height: 1;
   text-transform: uppercase;
   font-weight: 600;
-  color: #37517e;
+  color: #0c2646;
 }
 
 #footer .footer-top .footer-contact p {
@@ -1741,7 +1741,7 @@ section {
 #footer .footer-top h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #37517e;
+  color: #0c2646;
   position: relative;
   padding-bottom: 12px;
 }
@@ -1878,7 +1878,7 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   z-index: 9999;
   overflow: hidden;
-  background: #37517e;
+  background: #0c2646;
 }
 
 #preloader:before {
@@ -1886,7 +1886,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid #37517e;
+  border: 6px solid #0c2646;
   border-top-color: #fff;
   border-bottom-color: #fff;
   border-radius: 50%;
@@ -2158,7 +2158,7 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav a {
   display: block;
   position: relative;
-  color: #37517e;
+  color: #0c2646;
   padding: 10px 20px;
   font-weight: 500;
   outline: none;
@@ -2226,7 +2226,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 80vh;
-  background: #37517e;
+  background: #0c2646;
 }
 
 #hero .container {
@@ -2258,11 +2258,11 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.5s;
   margin: 10px 0 0 0;
   color: #fff;
-  background: #47b2e4;
+  background: #ff9800;
 }
 
 #hero .btn-get-started:hover {
-  background: #209dd8;
+  background: #da8302;
 }
 
 #hero .btn-watch-video {
@@ -2385,7 +2385,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #37517e;
+  color: #ff9800;
 }
 
 .section-title h2::before {
@@ -2509,7 +2509,7 @@ section {
 .why-us .content h3 {
   font-weight: 400;
   font-size: 34px;
-  color: #37517e;
+  color: #0c2646;
 }
 
 .why-us .content h4 {
@@ -2629,7 +2629,7 @@ section {
 .skills .content h3 {
   font-weight: 700;
   font-size: 32px;
-  color: #37517e;
+  color: #0c2646;
   font-family: "Poppins", sans-serif;
 }
 
@@ -2665,7 +2665,7 @@ section {
   display: block;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
-  color: #37517e;
+  color:#0c2646;
 }
 
 .skills .progress .skill .val {
@@ -2711,7 +2711,7 @@ section {
 }
 
 .services .icon-box h4 a {
-  color: #37517e;
+  color: #0c2646;
   transition: ease-in-out 0.3s;
 }
 
@@ -2905,7 +2905,7 @@ section {
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 20px;
-  color: #37517e;
+  color: #0c2646;
 }
 
 .team .member span {
@@ -2951,7 +2951,7 @@ section {
 }
 
 .team .member .social a i {
-  color: #37517e;
+  color: #0c2646;
   font-size: 16px;
   margin: 0 2px;
 }
@@ -2988,12 +2988,12 @@ section {
   font-weight: 500;
   margin-bottom: 15px;
   font-size: 20px;
-  color: #37517e;
+  color: #0c2646;
 }
 
 .pricing h4 {
   font-size: 48px;
-  color: #37517e;
+  color: #0c2646;
   font-weight: 400;
   font-family: "Jost", sans-serif;
   margin-bottom: 25px;
@@ -3153,7 +3153,7 @@ section {
 }
 
 .faq .faq-list a.collapsed {
-  color: #37517e;
+  color: #0c2646;
   transition: 0.3s;
 }
 
@@ -3189,7 +3189,7 @@ section {
 
 .contact .info i {
   font-size: 20px;
-  color: #47b2e4;
+  color: #ff9800;
   float: left;
   width: 44px;
   height: 44px;
@@ -3206,7 +3206,7 @@ section {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #37517e;
+  color: #0c2646;
 }
 
 .contact .info p {
@@ -3332,7 +3332,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"] {
-  background: #47b2e4;
+  background: #ff9800;
   border: 0;
   padding: 12px 34px;
   color: #fff;
@@ -3341,7 +3341,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background: #209dd8;
+  background: #da8302;
 }
 
 @-webkit-keyframes animate-loading {
@@ -3381,7 +3381,7 @@ section {
 .breadcrumbs h2 {
   font-size: 28px;
   font-weight: 600;
-  color: #37517e;
+  color: #0c2646;
 }
 
 .breadcrumbs ol {
@@ -3496,7 +3496,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
   font-size: 14px;
-  background: #37517e;
+  background: #0c2646;
 }
 
 #footer .footer-newsletter {
@@ -3513,7 +3513,7 @@ section {
   padding: 0;
   line-height: 1;
   font-weight: 600;
-  color: #37517e;
+  color: #0c2646;
 }
 
 #footer .footer-newsletter form {
@@ -3531,6 +3531,7 @@ section {
   padding: 4px 8px;
   width: calc(100% - 100px);
 }
+
 
 #footer .footer-newsletter form input[type="submit"] {
   position: absolute;
@@ -3568,7 +3569,7 @@ section {
   line-height: 1;
   text-transform: uppercase;
   font-weight: 600;
-  color: #37517e;
+  color: #0c2646;
 }
 
 #footer .footer-top .footer-contact p {
@@ -3582,7 +3583,7 @@ section {
 #footer .footer-top h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #37517e;
+  color: #0c2646;
   position: relative;
   padding-bottom: 12px;
 }
@@ -3640,6 +3641,9 @@ section {
   height: 36px;
   transition: 0.3s;
 }
+
+
+
 
 #footer .footer-top .social-links a:hover {
   background: #209dd8;

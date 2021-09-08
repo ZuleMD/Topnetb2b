@@ -114,11 +114,11 @@
 <style>
     body {
         background-color:
-            #37517e;
+            #0c2646;
     }
 
     .register {
-        background: -webkit-linear-gradient(left, #2d546eeb, #e48647);
+        background: -webkit-linear-gradient(left, #0c2646, #ff9800);
         margin-top: 3%;
         padding: 5%;
     }
