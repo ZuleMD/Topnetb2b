@@ -26,6 +26,8 @@
                                     <table class="table" id="opportuniteTable">
                                         <thead class="text-primary">
                                             <th>Id</th>
+                                            <th>Nom apporteur</th>
+                                            <th>Prénom apporteur</th>
                                             <th>Code client</th>
                                             <th>Référence Matricule Fiscal</th>
                                             <th>Référence Registre Commerce</th>
@@ -37,7 +39,7 @@
                                             <th scope="col" width="150px"></th>
                                         </thead>
                                         <tbody>
-                                            @foreach($opportunites as $opportunite)
+                                            @foreach($publishes as $publish)
                                             <!-- View Modal -->
 
                                             @include('ApporteurAffaire.Opportunite.Modal')
@@ -76,37 +78,46 @@
                 [0, "asc"]
             ],
             columns: [{
-                    data: 'id',
-                    name: 'id'
-                }, {
-                    data: 'CodeClient',
-                    name: 'CodeClient'
+                    data: 'opportunite.id',
+                    name: 'opportunite.id'
                 },
                 {
-                    data: 'RefMatriculeFiscal',
-                    name: 'RefMatriculeFiscal'
+                    data: 'apporteur.Nom',
+                    name: 'apporteur.Nom'
+                },
+                {
+                    data: 'apporteur.Prenom',
+                    name: 'apporteur.Prenom'
+                },
+                {
+                    data: 'opportunite.CodeClient',
+                    name: 'opportunite.CodeClient'
+                },
+                {
+                    data: 'opportunite.RefMatriculeFiscal',
+                    name: 'opportunite.RefMatriculeFiscal'
                 },
 
                 {
-                    data: 'RefRegistreCommerce',
-                    name: 'RefRegistreCommerce'
+                    data: 'opportunite.RefRegistreCommerce',
+                    name: 'opportunite.RefRegistreCommerce'
                 },
 
                 {
-                    data: 'Nom',
-                    name: 'Nom'
+                    data: 'opportunite.Nom',
+                    name: 'opportunite.Nom'
                 },
                 {
-                    data: 'Prenom',
-                    name: 'Prenom'
+                    data: 'opportunite.Prenom',
+                    name: 'opportunite.Prenom'
                 },
                 {
-                    data: 'Adresse',
-                    name: 'Adresse'
+                    data: 'opportunite.Adresse',
+                    name: 'opportunite.Adresse'
                 },
                 {
-                    data: 'Tel',
-                    name: 'Tel'
+                    data: 'opportunite.Tel',
+                    name: 'opportunite.Tel'
                 },
 
                 {

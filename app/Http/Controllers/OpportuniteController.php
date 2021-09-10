@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Opportunite;
+use App\Models\Publish;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\Datatables;
 
@@ -17,15 +18,15 @@ class OpportuniteController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = Opportunite::all();
-            return Datatables::of($data)
+            $model = Publish::with('apporteur', 'opportunite');
+            return DataTables::eloquent($model)
                 ->addIndexColumn()
-                ->addColumn('action', function ($opportunite) {
-                    $view = '<a href="#" data-toggle="modal" data-target="#default' . $opportunite->id . '"> <i class="now-ui-icons education_glasses"></i></a>';
-                    $pending = '&nbsp;&nbsp;&nbsp; <a href="' . route('update.statusopportunite', $opportunite->id) . '"> <button class="btn btn-info"> En cours </button></a>';
-                    $checked = '&nbsp;&nbsp;&nbsp; <a href="' . route('update.statusopportunite', $opportunite->id) . '"> <button class="btn btn-success"> Traité </button></a>';
+                ->addColumn('action', function ($publish) {
+                    $view = '<a href="#" data-toggle="modal" data-target="#default' . $publish->opportunite->id . '"> <i class="now-ui-icons education_glasses"></i></a>';
+                    $pending = '&nbsp;&nbsp;&nbsp; <a href="' . route('update.statusopportunite', $publish->opportunite->id) . '"> <button class="btn btn-info"> En cours </button></a>';
+                    $checked = '&nbsp;&nbsp;&nbsp; <a href="' . route('update.statusopportunite', $publish->opportunite->id) . '"> <button class="btn btn-success"> Traité </button></a>';
 
-                    if ($opportunite->Etat == 1) {
+                    if ($publish->Etat == 1) {
                         return $view . $pending;
                     } else {
                         return $view . $checked;
@@ -36,8 +37,8 @@ class OpportuniteController extends Controller
                 ->make(true);
         }
 
-        $opportunites = Opportunite::get();
-        return view('ApporteurAffaire.Opportunite.index', compact('opportunites'));
+        $publishes = Publish::get();
+        return view('ApporteurAffaire.Opportunite.index', compact('publishes'));
     }
 
     /**
@@ -76,7 +77,14 @@ class OpportuniteController extends Controller
             $name1 = (new Opportunite)->raisonSociale($request);
             $data['RaisonSociale'] = $name1;
 
-            Opportunite::create($data);
+
+            $id = Opportunite::create($data);
+
+            Publish::create([
+                'apporteur_id' => auth()->user()->id,
+                'opportunite_id' => $id->id,
+
+            ]);
 
             return redirect()->back()->with('message', 'Ajouté avec succès!');
         } else {
@@ -114,6 +122,12 @@ class OpportuniteController extends Controller
 
             $data['CinGerant'] = $name4;
 
+            Publish::create([
+                'apporteur_id' => auth()->user()->id,
+                'opportunite_id' => $request->id,
+
+                'Etat' => 1
+            ]);
             Opportunite::create($data);
 
             return redirect()->back()->with('message', 'Ajouté avec succès!');
