@@ -37,6 +37,11 @@
                             <li><a class="nav-link" href="{{route('CommercialPro.index')}}">Consulter</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="{{route('Historique.index')}}">
+                            <i class="now-ui-icons education_glasses"></i>Historique</a>
+                    </li>
 
                     @endif
                     <!--CommercialPro-->
@@ -68,15 +73,7 @@
                         </ul>
                     </li>
                     @endif
-                    <!--Admin && CommercialPro-->
-                    @if(auth()->check()&& auth()->user()->role->Nom === 'Admin' or auth()->check()&& auth()->user()->role->Nom === 'CommercialPro')
 
-                    <li class="nav-item">
-
-                        <a class="nav-link" href="{{route('Historique.index')}}">
-                            <i class="now-ui-icons education_glasses"></i>Historique</a>
-                    </li>
-                    @endif
                     <!--ApporteurAffaire-->
                     @if(auth()->check()&& auth()->user()->role->Nom === 'ApporteurAffaire')
                     <li class="nav-item has-submenu">

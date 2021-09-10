@@ -24,12 +24,21 @@ class Opportunite extends Authenticatable
     }
 
 
-    public function matriculeFiscal($request)
+    public function MatriculeFiscal($request)
     {
         $MatriculeFiscal = $request->file('MatriculeFiscal');
         $name = $MatriculeFiscal->hashName();
         $destination = public_path('/images');
         $MatriculeFiscal->move($destination, $name);
+        return $name;
+    }
+
+    public function RegistreCommerce($request)
+    {
+        $RegistreCommerce = $request->file('RegistreCommerce');
+        $name = $RegistreCommerce->hashName();
+        $destination = public_path('/images');
+        $RegistreCommerce->move($destination, $name);
         return $name;
     }
 

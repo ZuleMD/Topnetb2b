@@ -27,7 +27,8 @@
                                         <thead class="text-primary">
                                             <th>Id</th>
                                             <th>Code client</th>
-                                            <th>Registre Commerce</th>
+                                            <th>Référence Matricule Fiscal</th>
+                                            <th>Référence Registre Commerce</th>
                                             <th>Nom</th>
                                             <th>Prénom</th>
                                             <th>Adresse</th>
@@ -81,10 +82,14 @@
                     data: 'CodeClient',
                     name: 'CodeClient'
                 },
+                {
+                    data: 'RefMatriculeFiscal',
+                    name: 'RefMatriculeFiscal'
+                },
 
                 {
-                    data: 'RegistreCommerce',
-                    name: 'RegistreCommerce'
+                    data: 'RefRegistreCommerce',
+                    name: 'RefRegistreCommerce'
                 },
 
                 {

@@ -15,20 +15,28 @@
             </div>
             <div class="modal-body">
                 @if((is_null($opportunite->MatriculeFiscal)))
+                <p>Offre: <strong>{{$opportunite->Offre}}</strong></p>
 
                 <p>Code client: <strong>{{$opportunite->CodeClient}}</strong></p>
                 <p>Raison sociale: <img src="{{asset('images')}}/{{$opportunite->RaisonSociale}}" class="table-user-thumb" alt="" width="200"></p>
-                <p>Offre: <strong>{{$opportunite->Offre}}</strong></p>
 
                 @else
+                <p>Offre: <strong>{{$opportunite->Offre}}</strong></p>
+
                 <p>Raison sociale: <img src="{{asset('images')}}/{{$opportunite->RaisonSociale}}" class="table-user-thumb" alt="" width="200"></p>
-                <p>Matricule fiscal: <img src="{{asset('images')}}/{{$opportunite->MatriculeFiscal}}" class="table-user-thumb" alt="" width="200"></p>
-                <p>Registre Commerce: <strong>{{$opportunite->RegistreCommerce}}</strong></p>
+
+                <p>Réference Matricule fiscal: <strong>{{$opportunite->RefMatriculeFiscal}}</strong> </p>
+                <p>Matricule Fiscal <img src="{{asset('images')}}/{{$opportunite->MatriculeFiscal}}" class="table-user-thumb" alt="" width="200"></p>
+
+                <p>Réference Registre Commerce: <strong>{{$opportunite->RefRegistreCommerce}}</strong> </p>
+                <p>Registre Commerce: <img src="{{asset('images')}}/{{$opportunite->RegistreCommerce}}" class="table-user-thumb" alt="" width="200"></p>
+
                 <p>Nom: <strong>{{$opportunite->Nom}}</strong></p>
                 <p>Prénom: <strong>{{$opportunite->Prenom}}</strong></p>
                 <p>Adresse: <strong>{{$opportunite->Adresse}}</strong></p>
                 <p>Téléphone: <strong>{{$opportunite->Tel}}</strong></p>
                 <p>Cin gérant: <img src="{{asset('images')}}/{{$opportunite->CinGerant}}" class="table-user-thumb" alt="" width="200"></p>
+
                 @endif
             </div>
             <div class="modal-footer">

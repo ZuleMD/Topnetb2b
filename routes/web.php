@@ -44,13 +44,10 @@ Route::group(['middleware' => 'prevent-back-history'], function () {
         Route::resource('Agence', 'AgenceController');
         //Activé ou Déactivé utilisateur
         Route::get('/statusagent/update/{id}', 'CommercialProController@toggleStatus')->name('update.statusagent');
-    });
-
-
-    //Historique
-    Route::group(['middleware' => ['auth', 'web']], function () {
+        //Historique
         Route::resource('Historique', 'AuditController');
     });
+
 
 
     Route::group(['middleware' => ['auth', 'CommercialPro']], function () {
@@ -60,6 +57,8 @@ Route::group(['middleware' => 'prevent-back-history'], function () {
         Route::get('/statusapporteur/update/{id}', 'ApporteurController@toggleStatus')->name('update.statusapporteur');
         //Offre
         Route::resource('Offre', 'OffreController');
+        Route::get('/statusopportunite/update/{id}', 'OpportuniteController@toggleStatus')->name('update.statusopportunite');
+
 
         //Opportunité
         Route::resource('Opportunite', 'OpportuniteController')->only(['index']);

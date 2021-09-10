@@ -22,7 +22,14 @@ class OpportuniteController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function ($opportunite) {
                     $view = '<a href="#" data-toggle="modal" data-target="#default' . $opportunite->id . '"> <i class="now-ui-icons education_glasses"></i></a>';
+                    $pending = '&nbsp;&nbsp;&nbsp; <a href="' . route('update.statusopportunite', $opportunite->id) . '"> <button class="btn btn-info"> En cours </button></a>';
+                    $checked = '&nbsp;&nbsp;&nbsp; <a href="' . route('update.statusopportunite', $opportunite->id) . '"> <button class="btn btn-success"> Traité </button></a>';
 
+                    if ($opportunite->Etat == 1) {
+                        return $view . $pending;
+                    } else {
+                        return $view . $checked;
+                    }
                     return $view;
                 })
                 ->rawColumns(['action'])
@@ -62,7 +69,6 @@ class OpportuniteController extends Controller
 
 
             ]);
-            //mistake fl 'RaisonSociale' => 'required tokhrej fi ezouz required
 
 
             $data = $request->only('RaisonSociale', 'CodeClient', 'Offre');
@@ -76,35 +82,45 @@ class OpportuniteController extends Controller
         } else {
 
             $this->validate($request, [
+                'RefMatriculeFiscal' => 'required',
                 'MatriculeFiscal' => 'required|mimes:jpeg,jpg,png',
                 'RaisonSociale' => 'required|mimes:jpeg,jpg,png',
-                'RegistreCommerce' => 'required',
+                'RefRegistreCommerce' => 'required',
+                'RegistreCommerce' => 'required|mimes:jpeg,jpg,png',
                 'Adresse' => 'required',
                 'Tel' => ['required', 'regex:/^[2459]\d{7}$/'],
                 'Nom' => 'required|alpha',
                 'Prenom' => 'required|alpha',
                 'CinGerant' => 'required|mimes:jpeg,jpg,png',
+                'Offre' => 'required',
+
 
             ]);
-            $data = $request->except('radio', 'CodeClient', 'Offre');
+            $data = $request->except('radio', 'CodeClient');
 
             $name1 = (new Opportunite)->raisonSociale($request);
 
             $data['RaisonSociale'] = $name1;
 
-            $name2 = (new Opportunite)->matriculeFiscal($request);
+            $name2 = (new Opportunite)->MatriculeFiscal($request);
 
             $data['MatriculeFiscal'] = $name2;
 
-            $name3 = (new Opportunite)->cinGerant($request);
+            $name3 = (new Opportunite)->RegistreCommerce($request);
 
-            $data['CinGerant'] = $name3;
+            $data['RegistreCommerce'] = $name3;
+
+            $name4 = (new Opportunite)->cinGerant($request);
+
+            $data['CinGerant'] = $name4;
 
             Opportunite::create($data);
 
             return redirect()->back()->with('message', 'Ajouté avec succès!');
         }
     }
+
+
 
     /**
      * Display the specified resource.
@@ -142,18 +158,29 @@ class OpportuniteController extends Controller
     public function validateStore($request)
     {
         return $this->validate($request, [
+            'RefMatriculeFiscal' => 'required',
             'MatriculeFiscal' => 'required|mimes:jpeg,jpg,png',
-            'CodeClient' => 'required',
             'RaisonSociale' => 'required|mimes:jpeg,jpg,png',
-            'RegistreCommerce' => 'required',
+            'RefRegistreCommerce' => 'required',
+            'RegistreCommerce' => 'required|mimes:jpeg,jpg,png',
             'Adresse' => 'required',
             'Tel' => ['required', 'regex:/^[2459]\d{7}$/'],
             'Nom' => 'required|alpha',
             'Prenom' => 'required|alpha',
-            'Offre' => 'required',
             'CinGerant' => 'required|mimes:jpeg,jpg,png',
+            'Offre' => 'required',
+
+
 
         ]);
+    }
+
+    public function toggleStatus($id)
+    {
+        $opporuunite  = Opportunite::find($id);
+        $opporuunite->Etat = !$opporuunite->Etat;
+        $opporuunite->save();
+        return redirect()->back();
     }
 
     /**

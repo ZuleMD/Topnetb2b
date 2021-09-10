@@ -16,15 +16,18 @@ class CreateOpportunitesTable extends Migration
         Schema::create('opportunites', function (Blueprint $table) {
             $table->id();
             $table->string('MatriculeFiscal')->nullable();
+            $table->string('RefMatriculeFiscal')->nullable();
             $table->string('CodeClient')->nullable();
             $table->string('RaisonSociale')->nullable();
             $table->string('RegistreCommerce')->nullable();
+            $table->string('RefRegistreCommerce')->nullable();
             $table->string('Nom')->nullable();
             $table->string('Prenom')->nullable();
             $table->string('Adresse')->nullable();
             $table->string('Tel')->nullable();
             $table->string('CinGerant')->nullable();
             $table->string('Offre')->nullable();
+            $table->integer('Etat')->default(1);
             $table->timestamps();
         });
     }

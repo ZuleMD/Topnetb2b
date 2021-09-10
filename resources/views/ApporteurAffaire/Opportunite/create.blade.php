@@ -55,6 +55,18 @@
                                                 </div>
                                             </div>
 
+                                            <div class="col-md-6 col-12">
+                                                <div class="form-group">
+                                                    <label for="">Offre</label>
+                                                    <input type="text" class="form-control @error('Offre') is-invalid @enderror" placeholder="Offre" name="Offre">
+                                                    @error('Offre')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+
                                         </div>
                                         <!--old client-->
 
@@ -75,17 +87,6 @@
                                                 </div>
 
 
-                                                <div class="col-md-6 col-12">
-                                                    <div class="form-group">
-                                                        <label for="">Offre</label>
-                                                        <input type="text" class="form-control @error('Offre') is-invalid @enderror" placeholder="Offre" name="Offre">
-                                                        @error('Offre')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                        @enderror
-                                                    </div>
-                                                </div>
 
                                             </div>
                                         </span>
@@ -98,7 +99,19 @@
 
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
-                                                        <label>MatriculeFiscal</label>
+                                                        <label for="">Réference Matricule Fiscal</label>
+                                                        <input type="text" class="form-control @error('RefMatriculeFiscal') is-invalid @enderror" placeholder="Réference Matricule Fiscal" name="RefMatriculeFiscal">
+                                                        @error('RefMatriculeFiscal')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-group">
+                                                        <label>Matricule Fiscal</label>
                                                         <div class="custom-file">
                                                             <input type="file" class="custom-file-input" id="inputGroupFile01" name="MatriculeFiscal" aria-describedby="inputGroupFileAddon01">
                                                             <label class="custom-file-label" for="inputGroupFile01">Matricule Fiscal</label>
@@ -113,12 +126,11 @@
 
 
 
-
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
-                                                        <label for="">Registre Commerce</label>
-                                                        <input type="text" class="form-control @error('RegistreCommerce') is-invalid @enderror" placeholder="Registre Commerce" name="RegistreCommerce">
-                                                        @error('RegistreCommerce')
+                                                        <label for="">Référence Registre Commerce</label>
+                                                        <input type="text" class="form-control @error('RefRegistreCommerce') is-invalid @enderror" placeholder="Réference Registre Commerce" name="RefRegistreCommerce">
+                                                        @error('RefRegistreCommerce')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span>
@@ -128,7 +140,34 @@
 
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
-                                                        <label for="">Nom</label>
+                                                        <label>Registre Commerce</label>
+                                                        <div class="custom-file">
+                                                            <input type="file" class="custom-file-input" id="inputGroupFile01" name="RegistreCommerce" aria-describedby="inputGroupFileAddon01">
+                                                            <label class="custom-file-label" for="inputGroupFile01">Registre Commerce</label>
+                                                        </div>
+                                                        @error('RegistreCommerce')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for=""><strong>Contact</strong></label><br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="">Nom gérant</label>
                                                         <input type="text" class="form-control @error('Nom') is-invalid @enderror" placeholder="Nom" name="Nom">
                                                         @error('Nom')
                                                         <span class="invalid-feedback" role="alert">
@@ -140,7 +179,7 @@
 
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
-                                                        <label for="">Prénom</label>
+                                                        <label for="">Prénom gérant</label>
                                                         <input type="text" class="form-control @error('Prenom') is-invalid @enderror" placeholder="Prénom" name="Prenom">
                                                         @error('Prenom')
                                                         <span class="invalid-feedback" role="alert">
@@ -151,7 +190,7 @@
                                                 </div>
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
-                                                        <label for="">Adresse</label>
+                                                        <label for="">Adresse gérant </label>
                                                         <input type="text" class="form-control @error('Adresse') is-invalid @enderror" placeholder="Adresse" name="Adresse">
                                                         @error('Adresse')
                                                         <span class="invalid-feedback" role="alert">
@@ -163,7 +202,7 @@
 
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
-                                                        <label for="">Téléphone</label>
+                                                        <label for="">Téléphone gérant</label>
                                                         <input type="text" name="Tel" class="form-control @error('Tel') is-invalid @enderror" placeholder="Téléphone">
                                                         @error('Tel')
                                                         <span class="invalid-feedback" role="alert">
