@@ -122,14 +122,13 @@ class OpportuniteController extends Controller
 
             $data['CinGerant'] = $name4;
 
+            $id = Opportunite::create($data);
+
             Publish::create([
                 'apporteur_id' => auth()->user()->id,
-                'opportunite_id' => $request->id,
+                'opportunite_id' => $id->id,
 
-                'Etat' => 1
             ]);
-            Opportunite::create($data);
-
             return redirect()->back()->with('message', 'Ajouté avec succès!');
         }
     }

@@ -27,12 +27,12 @@
                 <p>Nom apporteur: <strong>{{$publish->apporteur->Nom}}</strong></p>
                 <p>Prénom apporteur: <strong>{{$publish->apporteur->Prenom}}</strong></p>
 
-                <p>Offre: <strong>{{$opportunite->Offre}}</strong></p>
+                <p>Offre: <strong>{{$publish->opportunite->Offre}}</strong></p>
 
                 <p>Raison sociale: <img src="{{asset('images')}}/{{$publish->opportunite->RaisonSociale}}" class="table-user-thumb" alt="" width="200"></p>
 
                 <p>Réference Matricule fiscal: <strong>{{$publish->opportunite->RefMatriculeFiscal}}</strong> </p>
-                <p>Matricule Fiscal <img src="{{asset('images')}}/{{$opportunite->MatriculeFiscal}}" class="table-user-thumb" alt="" width="200"></p>
+                <p>Matricule Fiscal <img src="{{asset('images')}}/{{$publish->opportunite->MatriculeFiscal}}" class="table-user-thumb" alt="" width="200"></p>
 
                 <p>Réference Registre Commerce: <strong>{{$publish->opportunite->RefRegistreCommerce}}</strong> </p>
                 <p>Registre Commerce: <img src="{{asset('images')}}/{{$publish->opportunite->RegistreCommerce}}" class="table-user-thumb" alt="" width="200"></p>

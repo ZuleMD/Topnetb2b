@@ -102,6 +102,29 @@
                                                     </div>
                                                 </div>
 
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="">Nom</label>
+                                                        <input type="text" class="form-control @error('Nom') is-invalid @enderror" placeholder="Nom" name="Nom">
+                                                        @error('Nom')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="">Prénom</label>
+                                                        <input type="text" class="form-control @error('Prenom') is-invalid @enderror" placeholder="Prénom" name="Prenom">
+                                                        @error('Prenom')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
 
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
