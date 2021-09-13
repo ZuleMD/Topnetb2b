@@ -23,13 +23,16 @@ class OpportuniteController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function ($publish) {
                     $view = '<a href="#" data-toggle="modal" data-target="#default' . $publish->opportunite->id . '"> <i class="now-ui-icons education_glasses"></i></a>';
-                    $pending = '&nbsp;&nbsp;&nbsp; <a href="' . route('update.statusopportunite', $publish->opportunite->id) . '"> <button class="btn btn-info"> En cours </button></a>';
-                    $checked = '&nbsp;&nbsp;&nbsp; <a href="' . route('update.statusopportunite', $publish->opportunite->id) . '"> <button class="btn btn-success"> Traité </button></a>';
-
-                    if ($publish->Etat == 1) {
-                        return $view . $pending;
-                    } else {
-                        return $view . $checked;
+                    $new = '&nbsp;&nbsp; <a href="' . route('update.statusopportunite', $publish->opportunite->id) . '"> <button class="btn btn-primary"> Nouvellement créé </button></a>';
+                    $pending = '&nbsp;&nbsp; <a href="' . route('update.statusopportunite', $publish->opportunite->id) . '"> <button class="btn btn-info"> En cours de traiter </button></a>';
+                    $checked = '&nbsp;&nbsp; <a href="' . route('update.statusopportunite', $publish->opportunite->id) . '"> <button class="btn btn-success"> Traité </button></a>';
+                    $annuler = ' &nbsp;&nbsp; <a href=' . "#" . '> <button class="btn btn-danger"> <i class="now-ui-icons ui-1_simple-remove"></i>Annuler</button></a>';
+                    if ($publish->Etat == 0) {
+                        return $view . $new . $annuler;
+                    } elseif ($publish->Etat == 1) {
+                        return $view . $pending . $annuler;
+                    } elseif ($publish->Etat == 2) {
+                        return $view . $checked . $annuler;
                     }
                     return $view;
                 })
@@ -191,7 +194,9 @@ class OpportuniteController extends Controller
     public function toggleStatus($id)
     {
         $opporuunite  = Opportunite::find($id);
-        $opporuunite->Etat = !$opporuunite->Etat;
+        if ($opporuunite->Etat != 2) {
+            $opporuunite->Etat = $opporuunite->Etat + 1;
+        }
         $opporuunite->save();
         return redirect()->back();
     }

@@ -23,11 +23,11 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table" id="opportuniteTable">
+                                    <table class="table table-bordered" id="opportuniteTable">
                                         <thead class="text-primary">
                                             <th>Id</th>
-                                            <th>Nom apporteur</th>
-                                            <th>Prénom apporteur</th>
+                                            <th>Informations apporteur d'affaires</th>
+
                                             <th>Code client</th>
                                             <th>Référence Matricule Fiscal</th>
                                             <th>Référence Registre Commerce</th>
@@ -36,7 +36,8 @@
                                             <th>Adresse</th>
                                             <th>Téléphone</th>
                                             <th>Offre</th>
-                                            <th scope="col" width="150px"></th>
+
+                                            <th scope="col" width="200px"></th>
                                         </thead>
                                         <tbody>
                                             @foreach($publishes as $publish)
@@ -82,13 +83,14 @@
                     name: 'opportunite.id'
                 },
                 {
-                    data: 'apporteur.Nom',
-                    name: 'apporteur.Nom'
+                    data: 'apporteur',
+                    render: function(data) {
+                        return 'Nom:' + ' ' + data.Nom + ' ' +
+                            'Prénom: ' + ' ' + data.Prenom + ' ' +
+                            'Téléphone: ' + ' ' + data.Tel;
+                    }
                 },
-                {
-                    data: 'apporteur.Prenom',
-                    name: 'apporteur.Prenom'
-                },
+
                 {
                     data: 'opportunite.CodeClient',
                     name: 'opportunite.CodeClient'
@@ -124,6 +126,8 @@
                     data: 'Offre',
                     name: 'Offre'
                 },
+
+
 
                 {
                     data: 'action',
