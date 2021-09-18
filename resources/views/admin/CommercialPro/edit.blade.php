@@ -201,7 +201,7 @@
                                 <div class="author">
 
                                     <img class="avatar border-gray" src="{{asset('images')}}/{{ $user->Image}}" alt="...">
-                                    <h5 class="title">{{$user->Nom}}</h5>
+                                    <h5 class="title">{{$user->Prenom}}&nbsp;{{$user->Nom}}</h5>
 
                                     <p class="description">
                                         {{$user->Role->Nom}}

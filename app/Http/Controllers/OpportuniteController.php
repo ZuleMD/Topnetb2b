@@ -26,13 +26,13 @@ class OpportuniteController extends Controller
                     $new = '&nbsp;&nbsp; <a href="' . route('update.statusopportunite', $publish->opportunite->id) . '"> <button class="btn btn-primary"> Nouvellement créé </button></a>';
                     $pending = '&nbsp;&nbsp; <a href="' . route('update.statusopportunite', $publish->opportunite->id) . '"> <button class="btn btn-info"> En cours de traiter </button></a>';
                     $checked = '&nbsp;&nbsp; <a href="' . route('update.statusopportunite', $publish->opportunite->id) . '"> <button class="btn btn-success"> Traité </button></a>';
-                    $annuler = ' &nbsp;&nbsp; <a href=' . "#" . '> <button class="btn btn-danger"> <i class="now-ui-icons ui-1_simple-remove"></i>Annuler</button></a>';
+
                     if ($publish->Etat == 0) {
-                        return $view . $new . $annuler;
+                        return $view . $new;
                     } elseif ($publish->Etat == 1) {
-                        return $view . $pending . $annuler;
+                        return $view . $pending;
                     } elseif ($publish->Etat == 2) {
-                        return $view . $checked . $annuler;
+                        return $view . $checked;
                     }
                     return $view;
                 })
@@ -100,10 +100,10 @@ class OpportuniteController extends Controller
                 'RegistreCommerce' => 'required|mimes:jpeg,jpg,png',
                 'Adresse' => 'required',
                 'Tel' => ['required', 'regex:/^[2459]\d{7}$/'],
-                'Nom' => 'required|alpha',
-                'Prenom' => 'required|alpha',
+                'Nom' => 'required|regex:/^[\pL\s\-]+$/u',
+                'Prenom' => 'required|regex:/^[\pL\s\-]+$/u',
                 'CinGerant' => 'required|mimes:jpeg,jpg,png',
-                'Offre' => 'required',
+                'Offre' => 'required|regex:/^[\pL\s\-]+$/u',
 
 
             ]);
@@ -181,10 +181,10 @@ class OpportuniteController extends Controller
             'RegistreCommerce' => 'required|mimes:jpeg,jpg,png',
             'Adresse' => 'required',
             'Tel' => ['required', 'regex:/^[2459]\d{7}$/'],
-            'Nom' => 'required|alpha',
-            'Prenom' => 'required|alpha',
+            'Nom' => 'required|regex:/^[\pL\s\-]+$/u',
+            'Prenom' => 'required|regex:/^[\pL\s\-]+$/u',
             'CinGerant' => 'required|mimes:jpeg,jpg,png',
-            'Offre' => 'required',
+            'Offre' => 'required|regex:/^[\pL\s\-]+$/u',
 
 
 

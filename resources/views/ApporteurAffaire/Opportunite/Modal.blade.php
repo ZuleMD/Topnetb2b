@@ -15,32 +15,19 @@
             </div>
             <div class="modal-body">
                 @if((is_null($publish->opportunite->MatriculeFiscal)))
-                <p>Nom apporteur: <strong>{{$publish->apporteur->Nom}}</strong></p>
-                <p>Prénom apporteur: <strong>{{$publish->apporteur->Prenom}}</strong></p>
 
-                <p>Offre: <strong>{{$publish->opportunite->Offre}}</strong></p>
-
-                <p>Code client: <strong>{{$publish->opportunite->CodeClient}}</strong></p>
                 <p>Raison sociale: <img src="{{asset('images')}}/{{$publish->opportunite->RaisonSociale}}" class="table-user-thumb" alt="" width="200"></p>
 
                 @else
-                <p>Nom apporteur: <strong>{{$publish->apporteur->Nom}}</strong></p>
-                <p>Prénom apporteur: <strong>{{$publish->apporteur->Prenom}}</strong></p>
 
-                <p>Offre: <strong>{{$publish->opportunite->Offre}}</strong></p>
 
                 <p>Raison sociale: <img src="{{asset('images')}}/{{$publish->opportunite->RaisonSociale}}" class="table-user-thumb" alt="" width="200"></p>
 
-                <p>Réference Matricule fiscal: <strong>{{$publish->opportunite->RefMatriculeFiscal}}</strong> </p>
                 <p>Matricule Fiscal <img src="{{asset('images')}}/{{$publish->opportunite->MatriculeFiscal}}" class="table-user-thumb" alt="" width="200"></p>
 
-                <p>Réference Registre Commerce: <strong>{{$publish->opportunite->RefRegistreCommerce}}</strong> </p>
                 <p>Registre Commerce: <img src="{{asset('images')}}/{{$publish->opportunite->RegistreCommerce}}" class="table-user-thumb" alt="" width="200"></p>
 
-                <p>Nom: <strong>{{$publish->opportunite->Nom}}</strong></p>
-                <p>Prénom: <strong>{{$publish->opportunite->Prenom}}</strong></p>
-                <p>Adresse: <strong>{{$publish->opportunite->Adresse}}</strong></p>
-                <p>Téléphone: <strong>{{$publish->opportunite->Tel}}</strong></p>
+
                 <p>Cin gérant: <img src="{{asset('images')}}/{{$publish->opportunite->CinGerant}}" class="table-user-thumb" alt="" width="200"></p>
 
                 @endif

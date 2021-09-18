@@ -144,13 +144,39 @@
                         </div>
                         </form>
                     </div>
+
+                    <div class="col-md-4">
+                        <div class="card card-user">
+                            <div class="image">
+                                <img src="{{asset('dash/img/bg5.jpg')}}" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <div class="author">
+
+                                    <img class="avatar border-gray" src="{{asset('images')}}/{{ $apporteur->Image}}" alt="...">
+                                    <h5 class="title">{{$apporteur->Prenom}}&nbsp;{{$apporteur->Nom}}</h5>
+
+                                    <p class="description">
+                                        {{$apporteur->Role->Nom}}
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 
     </div>
     </div>
-
-
+    <style>
+        .author .title {
+            color: #f96332;
+        }
+    </style>
     @endsection

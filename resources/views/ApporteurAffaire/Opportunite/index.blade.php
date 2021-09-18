@@ -85,9 +85,9 @@
                 {
                     data: 'apporteur',
                     render: function(data) {
-                        return 'Nom:' + ' ' + data.Nom + ' ' +
-                            'Prénom: ' + ' ' + data.Prenom + ' ' +
-                            'Téléphone: ' + ' ' + data.Tel;
+                        return 'Nom: ' + ' ' + '<strong>' + data.Nom + '</strong>' + '<br> ' +
+                            'Prénom: ' + ' ' + '<strong>' + data.Prenom + '</strong>' + '<br> ' +
+                            'Téléphone: ' + ' ' + '<strong>' + data.Tel + '</strong>';
                     }
                 },
 
