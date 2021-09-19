@@ -25,6 +25,10 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::get('/contact', 'ContactController@contact');
+Route::post('/send', 'ContactController@sendEmail')->name('contact.send');
+
 //Empecher le retour en arriere 
 Route::get('/dashboard', function () {
     return view('dashboard');

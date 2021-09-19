@@ -265,36 +265,59 @@
                     </div>
 
                     <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="name">Nom</label>
-                                    <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                                    <div class="validate"></div>
+                        <div class="php-email-form">
+                            <form action="{{route('contact.send')}}" method="post" enctype="multipart/form-data">@csrf
+
+                                <div class="form-row">
+
+                                    <div class="form-group col-md-6">
+                                        <label for="">Nom</label>
+                                        <input type="text" class="form-control @error('Nom') is-invalid @enderror" id="name" placeholder="Nom" name="Nom" />
+                                        @error('Nom')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="">Email</label>
+                                        <input type="email" class="form-control  @error('email') is-invalid @enderror" id="email" placeholder="Email" name="email" />
+                                        @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
                                 </div>
-                                <div class="form-group col-md-6">
-                                    <label for="name">Email</label>
-                                    <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
-                                    <div class="validate"></div>
+                                <div class="form-group">
+                                    <label for="">Sujet</label>
+                                    <input type="text" class="form-control  @error('Sujet') is-invalid @enderror" id="subject" placeholder="Sujet" name="Sujet" />
+                                    @error('Sujet')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Sujet</label>
-                                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                                <div class="validate"></div>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Message</label>
-                                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
-                                <div class="validate"></div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-                            </div>
-                            <div class="text-center"><button type="submit">Envoyer</button></div>
-                        </form>
+                                <div class="form-group">
+                                    <label for="">Message</label>
+                                    <textarea class="form-control  @error('Message') is-invalid @enderror" rows="10" placeholder="Message" name="Message"></textarea>
+                                    @error('Message')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                @if(Session::has('message'))
+                                <div class="alert bg-success alert-success text-white" role="alert">
+                                    {{Session::get('message')}}
+                                </div>
+                                @endif
+
+                                <div class="text-center"><button type="submit">Envoyer</button></div>
+                            </form>
+
+                        </div>
                     </div>
 
                 </div>
