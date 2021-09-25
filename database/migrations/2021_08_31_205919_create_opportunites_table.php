@@ -27,7 +27,7 @@ class CreateOpportunitesTable extends Migration
             $table->string('Tel')->nullable();
             $table->string('CinGerant')->nullable();
             $table->string('Offre')->nullable();
-            $table->integer('Etat')->default(1);
+            $table->integer('Etat')->default(0);
             $table->timestamps();
         });
     }
